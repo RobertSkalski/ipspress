@@ -117,6 +117,46 @@
 
     @media(max-width: 600px){
       .gallery { column-count: 1; }
+
+      .gallery {
+    display: grid;
+    /* Tworzy 3 równe kolumny */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    padding: 120px 40px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    width: 100%;
+    /* Wymusza proporcje 3:2 (typowe dla fotografii sportowej) */
+    aspect-ratio: 3 / 2; 
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    /* Kluczowy element: zdjęcie wypełnia kadr bez zniekształceń */
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1); /* Efekt przybliżenia przy najechaniu */
+  }
+
+  /* Responsywność */
+  @media(max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+  }
+</style>
     }
   </style>
 </head>
@@ -144,12 +184,9 @@
 </header>
 
 <div class="gallery">
-  <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200" alt="Siatkówka">
-  <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200" alt="Kolarstwo">
-  <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200" alt="Piłka nożna - sprzęt">
-  <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200" alt="Piłka nożna - akcja">
-  <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200" alt="Sport - detal">
-  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200" alt="Kibice">
+  <div class="gallery-item"><img src="main1.jpg"></div>
+  <div class="gallery-item"><img src="main2.jpg"></div>
+  <div class="gallery-item"><img src="main3.jpg"></div>
 </div>
 
 </body>
