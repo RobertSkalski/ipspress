@@ -45,70 +45,85 @@
   }
 
 
-    .welcome-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    padding-top: 100px;
-    text-align: center;
-  }
-  
-  .typing-container {
-    display: inline-block;
-  }
-  
-  /* Duży napis "Hello!" */
-  .typing-main {
-    font-size: 64px; /* Bardzo duży rozmiar */
-    font-weight: 700;
-    margin-bottom: 10px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #ffcc00;
-    width: 0;
-    animation: 
-      typing 1s steps(10, end) forwards,
-      blink-caret 0.75s step-end infinite;
-  }
-  
-  
-      
-  /* Mniejszy napis pod spodem */
-  .typing-sub {
-    font-size: 24px; /* Mniejszy rozmiar */
-    font-weight: 400;
-    color: #ccc;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #ffcc00;
-    width: 0;
-    margin: 0 auto;
-    /* Animacja zaczyna się z opóźnieniem 1.2s */
-    animation: 
-      typing 2s steps(25, end) 1.2s forwards,
-      blink-caret 0.75s step-end infinite;
-  }
-  
-  /* Wspólna animacja pisania */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* Animacja kursora */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #ffcc00; }
-  }
-  
-  /* Responsywność dla telefonów */
-  @media (max-width: 768px) {
-    .typing-main { font-size: 40px; }
-    .typing-sub { font-size: 18px; }
-    .welcome-section { height: 300px; }
-  }
 
+
+
+
+
+
+    .welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.typing-container {
+  display: inline-block;
+}
+
+/* Duży napis "Hello!" */
+.typing-main {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent; /* Startujemy z ukrytym kursorem */
+  width: 0;
+  /* Kursor mruga tylko przez 1.2s, potem znika */
+  animation: 
+    typing 1s steps(10, end) forwards,
+    blink-caret-main 1.2s step-end;
+}
+
+/* Mniejszy napis pod spodem */
+.typing-sub {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  width: 0;
+  margin: 0 auto;
+  /* Startuje po 1.2s, kursor mruga przez 2s i znika */
+  animation: 
+    typing 2s steps(25, end) 1.2s forwards,
+    blink-caret-sub 2s step-end 1.2s;
+}
+
+/* Animacja pisania */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Kursor dla pierwszej linii - mruga i na końcu zostaje przezroczysty */
+@keyframes blink-caret-main {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; }
+  100% { border-color: transparent; }
+}
+
+/* Kursor dla drugiej linii - mruga i na końcu zostaje przezroczysty */
+@keyframes blink-caret-sub {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; }
+  100% { border-color: transparent; }
+}
+
+@media (max-width: 768px) {
+  .typing-main { font-size: 40px; }
+  .typing-sub { font-size: 18px; }
+  .welcome-section { height: 300px; }
+}
+
+
+
+    
     
     
   .nav-links { display: flex; gap: 20px; }
