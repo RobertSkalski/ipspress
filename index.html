@@ -3,97 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPSPRESS</title>
+  <title>IPSPRESS - Agencja Fotografii Sportowej</title>
+
+  <!-- Dodajemy nowoczesną czcionkę Montserrat z Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* RESET: Usuwamy domyślne marginesy przeglądarki */
     *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body{
-      background:#000;
-      color:white;
-      font-family:Arial, sans-serif;
+      /* Ciemne tło, tak jak w projekcie Adobe */
+      background: #0a0a0a; 
+      color: white;
+      /* Zmieniamy czcionkę na nowszą */
+      font-family: 'Montserrat', sans-serif; 
     }
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      padding:25px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(0,0,0,0.7);
-      backdrop-filter:blur(10px);
-      z-index:1000;
+    /* --- STYLIZACJA NAGŁÓWKA (MENU) --- */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      /* Flexbox pozwala nam ułożyć 3 sekcje (lewa, środek, prawa) obok siebie */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.85); /* Ciemniejsze, lekko przezroczyste tło */
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05); /* Delikatna linia oddzielająca */
     }
 
-    .logo{
-      font-size:20px;
-      font-weight:bold;
-      letter-spacing:3px;
+    /* Lewa strona: Linki do podstron */
+    .nav-links {
+      display: flex;
+      gap: 20px; /* Odstęp między linkami */
     }
 
-    .gallery{
-      column-count:3;
-      column-gap:12px;
-      padding:120px 12px 12px;
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    .gallery img{
-      width:100%;
-      margin-bottom:12px;
-      border-radius:10px;
-      display:block;
-      transition:0.3s;
+    .nav-links a:hover {
+      color: #aaaaaa; /* Kolor po najechaniu myszką */
     }
 
-    .gallery img:hover{
-      opacity:0.85;
-      transform:scale(0.995);
+    /* Środek: Logo */
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    @media(max-width:900px){
-      .gallery{
-        column-count:2;
-      }
+    /* Prawa strona: Ikony (na razie jako tekst, później podmienimy na ikonki SVG) */
+    .social-icons {
+      display: flex;
+      gap: 15px;
     }
 
-    @media(max-width:600px){
-      .gallery{
-        column-count:1;
-      }
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
 
-      header{
-        padding:20px;
-      }
+    .social-icons a:hover {
+      color: #aaaaaa;
+    }
+
+    /* --- STYLIZACJA GALERII --- */
+    .gallery {
+      column-count: 3;
+      column-gap: 15px;
+      padding: 120px 40px 40px; /* Zwiększony padding po bokach */
+      max-width: 1400px; /* Ograniczamy szerokość galerii na wielkich ekranach */
+      margin: 0 auto; /* Środkujemy galerię */
+    }
+
+    .gallery img {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 6px; /* Zmniejszyłem zaokrąglenie dla bardziej "agresywnego", sportowego wyglądu */
+      display: block;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 0.8;
+      transform: scale(0.98);
+    }
+
+    /* Responsywność dla mniejszych ekranów */
+    @media(max-width: 900px){
+      .gallery { column-count: 2; padding: 100px 20px 20px; }
+      header { padding: 15px 20px; }
+      .nav-links, .social-icons { display: none; } /* Na telefonach ukrywamy menu - zrobimy tu "hamburgera" później */
+    }
+
+    @media(max-width: 600px){
+      .gallery { column-count: 1; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
+  <!-- 1. Lewa strona: Nawigacja -->
+  <nav class="nav-links">
+    <a href="#">Strona główna</a>
+    <a href="#">Najlepsze</a>
+    <a href="#">Galeria</a>
+    <a href="#">Kontakt</a>
+  </nav>
+
+  <!-- 2. Środek: Logo -->
   <div class="logo">IPSPRESS</div>
+
+  <!-- 3. Prawa strona: Media społecznościowe -->
+  <div class="social-icons">
+    <a href="#">X</a>
+    <a href="#">Be</a>
+    <a href="#">Fb</a>
+    <a href="#">Ig</a>
+  </div>
 </header>
 
 <div class="gallery">
-
-  <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200">
-  
-  <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200">
-
-  <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200">
-
-  <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200">
-
-  <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200">
-
-  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200">
-
+  <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200" alt="Siatkówka">
+  <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200" alt="Kolarstwo">
+  <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200" alt="Piłka nożna - sprzęt">
+  <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200" alt="Piłka nożna - akcja">
+  <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200" alt="Sport - detal">
+  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200" alt="Kibice">
 </div>
 
 </body>
