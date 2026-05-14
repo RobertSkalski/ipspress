@@ -52,32 +52,32 @@
 
 
     .welcome-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  padding-top: 100px;
-  text-align: center;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      padding-top: 100px;
+      text-align: center;
+    }
 
 .typing-container {
-  display: inline-block;
-}
+      display: inline-block;
+    }
 
 /* Duży napis "Hello!" */
 .typing-main {
-  font-size: 64px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid transparent; /* Startujemy z ukrytym kursorem */
-  width: 0;
-  /* Kursor mruga tylko przez 1.2s, potem znika */
-  animation: 
-    typing 1s steps(10, end) forwards,
-    blink-caret-main 1.2s step-end;
-}
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid transparent; /* Startujemy z ukrytym kursorem */
+      width: 0;
+      /* Kursor mruga tylko przez 1.2s, potem znika */
+      animation: 
+        typing 1s steps(10, end) forwards,
+        blink-caret-main 1.2s step-end;
+    }
 
 /* Mniejszy napis pod spodem */
 .typing-sub {
