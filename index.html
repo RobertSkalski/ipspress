@@ -181,28 +181,33 @@
   }
 
   footer {
-  padding: 60px 20px;
-  text-align: center; /* Środkuje wszystko wewnątrz stopki */
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Delikatna kreska oddzielająca */
-  margin-top: 40px;
-}
+    width: 100%;
+    padding: 60px 20px;
+    /* To wycentruje tekst paragrafu */
+    text-align: center; 
+    /* Lekkie tło, aby napisy były czytelne na zdjęciu w tle */
+    background: rgba(0, 0, 0, 0.7); 
+    margin-top: 40px;
+  }
 
 .footer-socials {
-  display: flex;
-  justify-content: center; /* Środkuje ikony w poziomie */
-  gap: 20px;
-  margin-bottom: 20px;
-}
+    /* Uruchamiamy system Flexbox */
+    display: flex; 
+    /* To kluczowa linia - centruje elementy w poziomie */
+    justify-content: center; 
+    /* Odstępy między ikonami */
+    gap: 20px; 
+    margin-bottom: 15px;
+  }
 
 .copyright-text {
-  font-size: 12px;
-  color: #666; /* Szary kolor tekstu, aby nie odciągał uwagi od zdjęć */
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-}
+    font-size: 12px;
+    color: #bbb;
+    max-width: 800px;
+    /* To centruje sam kontener tekstu, jeśli dasz mu max-width */
+    margin: 0 auto; 
+    line-height: 1.6;
+  }
       
 </style>
     }
@@ -272,6 +277,9 @@
     <img src="foto/glowna/main3.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
   </div>
 
+
+
+  
   <div class="gallery-item">
     <img src="foto/glowna/main1.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
   </div>
@@ -285,6 +293,23 @@
   <div class="gallery-item">
     <img src="foto/glowna/main3.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
   </div>
+
+
+
+  <div class="gallery-item">
+    <img src="foto/glowna/main3.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
+  </div>
+  
+  <!-- Drugi kafelek -->
+  <div class="gallery-item">
+    <img src="foto/glowna/main2.jpg" alt="Radość piłkarzy po strzelonym golu, legalni bukmacherzy, emocje sportowe i typowanie wyników na żywo">
+  </div>
+  
+  <!-- Trzeci kafelek -->
+  <div class="gallery-item">
+    <img src="foto/glowna/main1.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
+  </div>
+
   
 </div>
 
