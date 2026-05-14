@@ -5,232 +5,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPS Press</title>
 
+  <!-- Dodajemy nowoczesną czcionkę Montserrat z Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET I PODSTAWY */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* RESET I PODSTAWY */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-      background-image: url('foto/glowna/tlo1.jpg'); 
-      background-attachment: fixed; 
-      background-size: cover;      
-      background-position: center;  
-      background-repeat: no-repeat; 
-      background-color: #000;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden; /* Zapobiega przewijaniu na boki */
-    }
+  body {
+    background-image: url('foto/glowna/tlo1.jpg'); 
+    background-attachment: fixed; 
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-color: #000;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
 
-    /* NAGŁÓWEK */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
+  /* NAGŁÓWEK */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
 
-    .nav-links { display: flex; gap: 20px; }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
-      text-transform: uppercase;
-    }
-    .nav-links a:hover { color: #aaaaaa; }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
 
-    /* LOGOWANIE */
-    .login-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+     .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Wyrównuje do prawej strony menu */
+}
 
-    .login-fields { display: flex; gap: 8px; }
+.login-fields {
+  display: flex;
+  gap: 8px;
+}
 
-    .nav-input {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      width: 100px;
-    }
+.login-error {
+  color: #ff4444;
+  font-size: 10px;
+  margin-top: 4px;
+  display: none; /* Ukryte domyślnie */
+  font-weight: 600;
+  text-transform: uppercase;
+}
 
-    .nav-login-btn {
-      background: white;
-      color: black;
-      border: none;
-      padding: 6px 15px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
+/* Reszta stylów .nav-input i .nav-login-btn zostaje bez zmian z poprzedniego kroku */
 
-    .login-error {
-      color: #ff4444;
-      font-size: 10px;
-      margin-top: 4px;
-      display: none;
-      font-weight: 600;
-    }
 
-    /* SEKCJA POWITALNA */
+    
+.nav-input {
+  background: rgba(255, 255, 255, 0.1); /* Półprzezroczyste tło */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'Montserrat', sans-serif;
+  width: 90px; /* Mała szerokość, żeby nie zdominowało menu */
+  transition: all 0.3s ease;
+}
+
+.nav-input:focus {
+  outline: none;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-login-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.nav-login-btn:hover {
+  opacity: 0.8;
+}
+
+/* Ukrywamy panel na bardzo małych telefonach, żeby menu się nie rozjechało */
+@media (max-width: 480px) {
+  .login-container {
+    display: none;
+  }
+}
+
+
+
+
     .welcome-section {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 400px;
-      padding-top: 100px;
+      height: 300px;
+      padding-top: 150px;
       text-align: center;
     }
 
-    .typing-main {
+.typing-container {
+      display: inline-block;
+    }
+
+/* Duży napis "Hello!" */
+.typing-main {
       font-size: 80px;
       font-weight: 700;
       margin-bottom: 10px;
       overflow: hidden;
       white-space: nowrap;
+      border-right: 3px solid transparent; /* Startujemy z ukrytym kursorem */
       width: 0;
-      margin: 0 auto;
-      animation: typing 1s steps(10, end) forwards;
-      border-right: 3px solid transparent;
+      /* Kursor mruga tylko przez 1.2s, potem znika */
+      animation: 
+        typing 1s steps(10, end) forwards,
+        blink-caret-main 1.2s step-end;
     }
 
-    .typing-sub {
-      font-size: 40px;
-      color: #ccc;
-      overflow: hidden;
-      white-space: nowrap;
-      width: 0;
-      margin: 0 auto;
-      animation: typing 2s steps(25, end) 1.2s forwards;
-      border-right: 3px solid transparent;
-    }
+/* Mniejszy napis pod spodem */
+.typing-sub {
+  font-size: 48px;
+  font-weight: 400;
+  color: #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  width: 0;
+  margin: 0 auto;
+  /* Startuje po 1.2s, kursor mruga przez 2s i znika */
+  animation: 
+    typing 2s steps(25, end) 1.2s forwards,
+    blink-caret-sub 2s step-end 1.2s;
+}
 
-    @keyframes typing { from { width: 0 } to { width: 100% } }
+/* Animacja pisania */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
-    /* GALERIA */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+/* Kursor dla pierwszej linii - mruga i na końcu zostaje przezroczysty */
+@keyframes blink-caret-main {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; }
+  100% { border-color: transparent; }
+}
 
-    .gallery-item {
-      position: relative;
-      aspect-ratio: 3 / 2;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #111;
-    }
+/* Kursor dla drugiej linii - mruga i na końcu zostaje przezroczysty */
+@keyframes blink-caret-sub {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; }
+  100% { border-color: transparent; }
+}
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
+@media (max-width: 768px) {
+  .typing-main { font-size: 40px; }
+  .typing-sub { font-size: 18px; }
+  .welcome-section { height: 300px; }
+}
 
-    /* Warstwa ściemniająca + tekst */
-    .content-overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
 
-    .overlay-text {
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-    }
 
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:hover .content-overlay { opacity: 1; }
+    
+    
+    
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .nav-links a:hover { color: #aaaaaa; }
 
-    /* STOPKA */
-    footer {
-      width: 100%;
-      padding: 60px 20px 100px; /* Duży odstęp na dole */
-      text-align: center;
-      background: rgba(0, 0, 0, 0.8);
-      margin-top: 50px;
-    }
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
 
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 20px;
-    }
+  .social-icons { display: flex; gap: 15px; align-items: center; }
+  .icon-img { width: 24px; height: 24px; object-fit: contain; transition: 0.3s; }
+  .icon-img:hover { opacity: 0.7; }
 
-    .icon-img {
-      width: 24px;
-      height: 24px;
-      transition: 0.3s;
-    }
+  /* GALERIA - POPRAWIONA I WYCENTROWANA */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 130px 40px 40px; /* 140px góry, żeby nie chowało się pod menu */
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-    .copyright-text {
-      font-size: 12px;
-      color: #888;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #111;
+  }
 
-    /* RESPONSIVE */
-    @media(max-width: 900px) {
-      .gallery { grid-template-columns: repeat(2, 1fr); }
-      .typing-main { font-size: 50px; }
-      .typing-sub { font-size: 24px; }
-    }
-    @media(max-width: 600px) {
-      .gallery { grid-template-columns: 1fr; }
-      .nav-links, .login-container { display: none; }
-    }
-  </style>
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+
+  /* STOPKA - TU SĄ KLUCZOWE ZMIANY */
+  footer {
+    width: 100%;
+    padding: 40px 20px 60px; /* Trzecia wartość (80px) to wolne miejsce na dole */
+    text-align: center;      /* Środkuje tekst o prawach autorskich */
+    background: rgba(0, 0, 0, 0.7); 
+    margin-top: 20px;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center; /* Środkuje ikony poziomo */
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
+    color: #bbb;
+    max-width: 800px;
+    margin: 0 auto; /* Gwarantuje, że blok tekstu jest na środku */
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+
+  @media(max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; padding-top: 100px; }
+    .nav-links, .social-icons { display: none; }
+  }
+</style>
 </head>
 <body>
 
+
+
+
+
+
+  
 <header>
+  <!-- 1. Lewa strona: Nawigacja -->
   <nav class="nav-links">
     <a href="#">Strona główna</a>
     <a href="#">Najlepsze</a>
@@ -238,18 +294,48 @@
     <a href="#">Kontakt</a>
   </nav>
 
-  <div class="logo">IPS PRESS</div>
+  <!-- 2. Środek: Logo -->
+  <div class="logo">IPSPRESS</div>
+
+  <!-- 3. Prawa strona: Media społecznościowe -->
+  <!--
+  <div class="social-icons">
+
+  <a href="https://x.com/Skalski_Robert" target="_blank">
+    <img src="elementy_graf/x.png" alt="X Logo" class="icon-img">
+  </a>
+
+  <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank">
+    <img src="elementy_graf/fb.png" alt="Facebook Logo" class="icon-img">
+  </a>
+
+
+  <a href="https://www.instagram.com/robertskalski_photography/" target="_blank">
+    <img src="elementy_graf/ig.png" alt="Instagram Logo" class="icon-img">
+  </a>
+
+
+  <a href="mailto:robertskalski20@gmail.com">
+    <img src="elementy_graf/mail.png" alt="Email" class="icon-img">
+  </a>
+</div>
+  -->
 
   <div class="login-container">
-    <div class="login-fields">
-      <input type="text" id="userLogin" placeholder="Username" class="nav-input">
-      <input type="password" id="userPass" placeholder="Password" class="nav-input">
-      <button onclick="checkLogin()" class="nav-login-btn">Login</button>
-    </div>
-    <div id="errorMsg" class="login-error">Niepoprawne dane logowania</div>
+  <div class="login-fields">
+    <input type="text" id="userLogin" placeholder="Username" class="nav-input">
+    <input type="password" id="userPass" placeholder="Password" class="nav-input">
+    <button onclick="checkLogin()" class="nav-login-btn">Login</button>
   </div>
+  <!-- Miejsce na komunikat o błędzie -->
+  <div id="errorMsg" class="login-error">Niepoprawne dane logowania</div>
+</div>
+
+  
 </header>
 
+
+  
 <section class="welcome-section">
   <div class="typing-container">
     <h1 class="typing-main">Cześć!</h1>
@@ -257,84 +343,101 @@
   </div>
 </section>
 
-<div class="gallery-item">
-    <img src="foto/glowna/main2.jpg" alt="Mecz 2">
-    <div class="content-overlay"><div class="overlay-text">Emocje Sportowe</div></div>
+
+  
+<div class="gallery">
+  <!-- Pierwszy kafelek -->
+  <div class="gallery-item">
+    <img src="foto/glowna/main1.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
   </div>
   
+  <!-- Drugi kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main2.jpg" alt="Mecz 2">
-    <div class="content-overlay"><div class="overlay-text">Emocje Sportowe</div></div>
+    <img src="foto/glowna/main2.jpg" alt="Radość piłkarzy po strzelonym golu, legalni bukmacherzy, emocje sportowe i typowanie wyników na żywo">
   </div>
   
+  <!-- Trzeci kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main3.jpg" alt="Mecz 3">
-    <div class="content-overlay"><div class="overlay-text">Stadionowa Murawa</div></div>
+    <img src="foto/glowna/main3.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
   </div>
 
-  <div class="gallery-item">
-    <img src="foto/glowna/main1.jpg" alt="Mecz 4">
-    <div class="content-overlay"><div class="overlay-text">Akcja na boisku</div></div>
-  </div>
+
+
   
   <div class="gallery-item">
-    <img src="foto/glowna/main2.jpg" alt="Mecz 5">
-    <div class="content-overlay"><div class="overlay-text">Radość po golu</div></div>
+    <img src="foto/glowna/main1.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
   </div>
   
+  <!-- Drugi kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main3.jpg" alt="Mecz 6">
-    <div class="content-overlay"><div class="overlay-text">Szczegóły meczu</div></div>
+    <img src="foto/glowna/main2.jpg" alt="Radość piłkarzy po strzelonym golu, legalni bukmacherzy, emocje sportowe i typowanie wyników na żywo">
+  </div>
+  
+  <!-- Trzeci kafelek -->
+  <div class="gallery-item">
+    <img src="foto/glowna/main3.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
   </div>
 
+
+
   <div class="gallery-item">
-    <img src="foto/glowna/main3.jpg" alt="Mecz 7">
-    <div class="content-overlay"><div class="overlay-text">Profesjonalna fotografia</div></div>
+    <img src="foto/glowna/main3.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
   </div>
   
+  <!-- Drugi kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main2.jpg" alt="Mecz 8">
-    <div class="content-overlay"><div class="overlay-text">Najlepsze ujęcia</div></div>
+    <img src="foto/glowna/main2.jpg" alt="Radość piłkarzy po strzelonym golu, legalni bukmacherzy, emocje sportowe i typowanie wyników na żywo">
   </div>
   
+  <!-- Trzeci kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main1.jpg" alt="Mecz 9">
-    <div class="content-overlay"><div class="overlay-text">Agencja IPS PRESS</div></div>
+    <img src="foto/glowna/main1.jpg" alt="Zbliżenie na sprzęt piłkarski na murawie stadionu, najwyższa liga rozgrywkowa, najlepsze kursy bukmacherskie">
   </div>
+
+  
 </div>
 
+
+  
 <footer>
   <div class="footer-socials">
+    <!-- Powielamy linki z nagłówka -->
     <a href="https://x.com/Skalski_Robert" target="_blank"><img src="elementy_graf/x.png" alt="X" class="icon-img"></a>
     <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank"><img src="elementy_graf/fb.png" alt="FB" class="icon-img"></a>
     <a href="https://www.instagram.com/robertskalski_photography/" target="_blank"><img src="elementy_graf/ig.png" alt="IG" class="icon-img"></a>
     <a href="mailto:robertskalski20@gmail.com"><img src="elementy_graf/mail.png" alt="Email" class="icon-img"></a>
   </div>
+  
   <p class="copyright-text">
     Wszystkie fotografie stanowią własność autora. Kopiowanie i rozpowszechnianie bez jego zgody jest zabronione.
   </p>
 </footer>
 
-<script>
+  <script>
   function checkLogin() {
+    // Pobieramy wartości z pól
     const login = document.getElementById('userLogin').value;
     const pass = document.getElementById('userPass').value;
     const error = document.getElementById('errorMsg');
-    if (login === "admin" && pass === "sport123") {
-      alert("Success!");
+
+    // Ustalamy "prawidłowe" dane dla testu
+    const validLogin = "admin";
+    const validPass = "sport123";
+
+    if (login === validLogin && pass === validPass) {
+      alert("Success! (W przyszłości tu nastąpi przekierowanie)");
+      error.style.display = "none";
     } else {
+      // Jeśli dane są złe, pokazujemy czerwony napis
       error.style.display = "block";
-      setTimeout(() => { error.style.display = "none"; }, 3000);
+      
+      // Opcjonalnie: ukryj błąd po 3 sekundach
+      setTimeout(() => {
+        error.style.display = "none";
+      }, 3000);
     }
   }
-
-  // Blokada zapisu zdjęć
-  const images = document.querySelectorAll('.gallery-item img');
-  images.forEach(img => {
-    img.addEventListener('contextmenu', e => e.preventDefault());
-    img.addEventListener('dragstart', e => e.preventDefault());
-  });
 </script>
-
+  
 </body>
 </html>
