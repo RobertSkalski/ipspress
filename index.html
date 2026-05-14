@@ -426,6 +426,27 @@
   </p>
 </footer>
 
+
+  <script>
+  // Wybieramy wszystkie zdjęcia w galerii
+  const images = document.querySelectorAll('.gallery-item img');
+
+  images.forEach(img => {
+    // Blokujemy prawy przycisk myszy
+    img.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Dodatkowe zabezpieczenie przed przeciąganiem (dla starszych przeglądarek)
+    img.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+
+
+  
+
   <script>
   function checkLogin() {
     // Pobieramy wartości z pól
