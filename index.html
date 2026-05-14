@@ -222,26 +222,59 @@
     margin: 0 auto;
   }
 
-  .gallery-item {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    border-radius: 6px;
-    background: #111;
-  }
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-  }
+    /* Kontener musi mieć pozycję relatywną, by overlay trzymał się w środku */
+.gallery-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 6px;
+}
 
-  .gallery-item:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-  }
+/* Warstwa ściemniająca */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Przyciemnienie (czarny z 60% krycia) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Domyślnie niewidoczne */
+  transition: opacity 0.4s ease; /* Płynne pojawianie się */
+}
+
+/* Napis na środku */
+.overlay-text {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Efekt po najechaniu */
+.gallery-item:hover .content-overlay {
+  opacity: 1; /* Warstwa staje się widoczna */
+}
+
+/* Zachowujemy powiększanie zdjęcia, ale upewniamy się, że pointer-events nie blokuje hovera */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
 
   /* STOPKA - TU SĄ KLUCZOWE ZMIANY */
   footer {
@@ -295,7 +328,7 @@
   </nav>
 
   <!-- 2. Środek: Logo -->
-  <div class="logo">IPSPRESS</div>
+  <div class="logo">IPS PRESS</div>
 
   <!-- 3. Prawa strona: Media społecznościowe -->
   <!--
@@ -348,7 +381,10 @@
 <div class="gallery">
   <!-- Pierwszy kafelek -->
   <div class="gallery-item">
-    <img src="foto/glowna/main1.jpg" alt="Zawodnik piłki nożnej podczas akcji na boisku, widoczne logo sponsora bukmacherskiego na koszulce, profesjonalne zakłady sportowe">
+    <img src="foto/glowna/main1.jpg" alt="Mecz Polska - Wyspy Owcze">
+  <!-- Nowa warstwa z napisem -->
+  <div class="content-overlay">
+    <div class="overlay-text">Polska - Wyspy Owcze</div>
   </div>
   
   <!-- Drugi kafelek -->
@@ -412,6 +448,27 @@
     Wszystkie fotografie stanowią własność autora. Kopiowanie i rozpowszechnianie bez jego zgody jest zabronione.
   </p>
 </footer>
+
+
+  <script>
+  // Wybieramy wszystkie zdjęcia w galerii
+  const images = document.querySelectorAll('.gallery-item img');
+
+  images.forEach(img => {
+    // Blokujemy prawy przycisk myszy
+    img.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Dodatkowe zabezpieczenie przed przeciąganiem (dla starszych przeglądarek)
+    img.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+
+
+  
 
   <script>
   function checkLogin() {
