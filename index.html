@@ -71,19 +71,19 @@
     /* Prawa strona: Ikony (na razie jako tekst, później podmienimy na ikonki SVG) */
     .social-icons {
       display: flex;
-      gap: 15px;
+      gap: 15px; /* Odstęp między ikonami */
+      align-items: center;
     }
-
-    .social-icons a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
-      transition: color 0.3s;
+    
+    .icon-img {
+      width: 24px;  /* Stała szerokość ikony */
+      height: 24px; /* Stała wysokość ikony */
+      object-fit: contain; /* Gwarantuje, że logo nie zostanie rozciągnięte */
+      transition: opacity 0.3s ease;
     }
-
-    .social-icons a:hover {
-      color: #aaaaaa;
+    
+    .icon-img:hover {
+      opacity: 0.7; /* Lekkie zblednięcie po najechaniu */
     }
 
     /* --- STYLIZACJA GALERII --- */
@@ -176,11 +176,26 @@
 
   <!-- 3. Prawa strona: Media społecznościowe -->
   <div class="social-icons">
-    <a href="#">X</a>
-    <a href="#">Be</a>
-    <a href="#">Fb</a>
-    <a href="#">Ig</a>
-  </div>
+  <!-- Link do X -->
+  <a href="https://x.com/Skalski_Robert" target="_blank">
+    <img src="elementy_graf/x.png" alt="X Logo" class="icon-img">
+  </a>
+
+  <!-- Link do Facebooka -->
+  <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank">
+    <img src="elementy_graf/fb.png" alt="Facebook Logo" class="icon-img">
+  </a>
+
+  <!-- Link do Instagrama -->
+  <a href="https://www.instagram.com/robertskalski_photography/" target="_blank">
+    <img src="elementy_graf/ig.png" alt="Instagram Logo" class="icon-img">
+  </a>
+
+  <!-- Link do Maila -->
+  <a href="mailto:robertskalski20@gmail.com">
+    <img src="elementy_graf/mail.png" alt="Email" class="icon-img">
+  </a>
+</div>
 </header>
 
 <div class="gallery">
