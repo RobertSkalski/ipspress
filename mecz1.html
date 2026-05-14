@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polska - Wyspy Owcze | IPS Press</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery-style.css">
+
+  <style>
+    /* Tutaj zostawiamy tylko to, co jest unikalne dla nagłówka tej podstrony */
+    .project-header {
+      padding: 180px 20px 60px;
+      text-align: center;
+    }
+    .project-header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .project-meta {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 20px;
+      transition: 0.3s;
+    }
+    .back-btn:hover { background: #fff; color: #000; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="#">Najlepsze</a>
+    <a href="#">Galeria</a>
+    <a href="#">Kontakt</a>
+  </nav>
+  <div class="logo">IPS PRESS</div>
+  <div class="login-container">
+    <div class="login-fields">
+      <input type="text" id="userLogin" placeholder="Username" class="nav-input">
+      <input type="password" id="userPass" placeholder="Password" class="nav-input">
+      <button onclick="checkLogin()" class="nav-login-btn">Login</button>
+    </div>
+    <div id="errorMsg" class="login-error">Niepoprawne dane logowania</div>
+  </div>
+</header>
+
+<section class="project-header">
+  <h1>Polska - Wyspy Owcze</h1>
+  <p class="project-meta">Warszawa, Stadion Narodowy | 07.09.2023</p>
+  <a href="index.html" class="back-btn">← Wróć do galerii</a>
+</section>
+
+<main class="project-content">
+  <img src="foto/glowna/main1.jpg" alt="Foto 1" class="project-photo">
+  <img src="foto/glowna/main2.jpg" alt="Foto 2" class="project-photo">
+  <img src="foto/glowna/main3.jpg" alt="Foto 3" class="project-photo">
+</main>
+
+<footer>
+  <div class="footer-socials">
+    <a href="#"><img src="elementy_graf/x.png" alt="X" class="icon-img"></a>
+    <a href="#"><img src="elementy_graf/fb.png" alt="FB" class="icon-img"></a>
+    <a href="#"><img src="elementy_graf/ig.png" alt="IG" class="icon-img"></a>
+    <a href="mailto:robertskalski20@gmail.com"><img src="elementy_graf/mail.png" alt="Email" class="icon-img"></a>
+  </div>
+  <p class="copyright-text">Wszystkie fotografie stanowią własność autora.</p>
+</footer>
+
+<script>
+  // Logika logowania (musi być w każdym pliku HTML)
+  function checkLogin() {
+    const login = document.getElementById('userLogin').value;
+    const pass = document.getElementById('userPass').value;
+    const error = document.getElementById('errorMsg');
+    if (login === "admin" && pass === "sport123") {
+      alert("Success!");
+    } else {
+      error.style.display = "block";
+      setTimeout(() => { error.style.display = "none"; }, 3000);
+    }
+  }
+
+  // Blokada zapisu fotek
+  document.querySelectorAll('.project-photo').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+</script>
+
+</body>
+</html>
