@@ -18,12 +18,27 @@
       box-sizing: border-box;
     }
 
-    body{
-      /* Ciemne tło, tak jak w projekcie Adobe */
-      background: #0a0a0a; 
+     body {
+      /* Ścieżka do Twojego pliku */
+      background-image: url('foto/glowna/tlo1.jpg'); 
+      
+      /* Kluczowa funkcja: zdjęcie stoi w miejscu (jest "przyklejone" do ekranu) */
+      background-attachment: fixed; 
+      
+      /* Zdjęcie wypełnia cały ekran bez pustych miejsc */
+      background-size: cover;      
+      
+      /* Środkuje zdjęcie, aby najważniejszy element był na centrum */
+      background-position: center;  
+      
+      /* Zapobiega powielaniu zdjęcia, jeśli byłoby za małe */
+      background-repeat: no-repeat; 
+    
+      /* Kolory tekstu i podstawowe tło */
+      background-color: #000;
       color: white;
-      /* Zmieniamy czcionkę na nowszą */
-      font-family: 'Montserrat', sans-serif; 
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
     }
 
     /* --- STYLIZACJA NAGŁÓWKA (MENU) --- */
