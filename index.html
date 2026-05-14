@@ -46,7 +46,54 @@
 
 
 
+      .login-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
+.nav-input {
+  background: rgba(255, 255, 255, 0.1); /* Półprzezroczyste tło */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'Montserrat', sans-serif;
+  width: 90px; /* Mała szerokość, żeby nie zdominowało menu */
+  transition: all 0.3s ease;
+}
+
+.nav-input:focus {
+  outline: none;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-login-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.nav-login-btn:hover {
+  opacity: 0.8;
+}
+
+/* Ukrywamy panel na bardzo małych telefonach, żeby menu się nie rozjechało */
+@media (max-width: 480px) {
+  .login-container {
+    display: none;
+  }
+}
 
 
 
@@ -233,27 +280,36 @@
   <div class="logo">IPSPRESS</div>
 
   <!-- 3. Prawa strona: Media społecznościowe -->
+  <!--
   <div class="social-icons">
-  <!-- Link do X -->
+
   <a href="https://x.com/Skalski_Robert" target="_blank">
     <img src="elementy_graf/x.png" alt="X Logo" class="icon-img">
   </a>
 
-  <!-- Link do Facebooka -->
   <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank">
     <img src="elementy_graf/fb.png" alt="Facebook Logo" class="icon-img">
   </a>
 
-  <!-- Link do Instagrama -->
+
   <a href="https://www.instagram.com/robertskalski_photography/" target="_blank">
     <img src="elementy_graf/ig.png" alt="Instagram Logo" class="icon-img">
   </a>
 
-  <!-- Link do Maila -->
+
   <a href="mailto:robertskalski20@gmail.com">
     <img src="elementy_graf/mail.png" alt="Email" class="icon-img">
   </a>
 </div>
+  -->
+
+  <div class="login-container">
+  <input type="text" placeholder="Username" class="nav-input">
+  <input type="password" placeholder="Password" class="nav-input">
+  <button class="nav-login-btn">Login</button>
+</div>
+
+  
 </header>
 
 
