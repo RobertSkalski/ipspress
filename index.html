@@ -236,6 +236,19 @@
     object-fit: cover;
     transition: transform 0.5s ease;
     display: block;
+    /* Uniemożliwia przeciąganie zdjęcia myszką */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    
+    /* Sprawia, że zdjęcie jest ignorowane przez kliknięcia myszy */
+    /* UWAGA: to może wyłączyć efekt hover (powiększanie), 
+       jeśli nie ustawimy tego na odpowiednim poziomie kaskady. */
+    pointer-events: none; 
+    
+    /* Blokuje zaznaczanie */
+  user-select: none;
   }
 
   .gallery-item:hover img {
