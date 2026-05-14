@@ -128,25 +128,33 @@
     margin: 0 auto;
   }
 
+  /* Kontener kafelka - działa jak ramka */
   .gallery-item {
     width: 100%;
-    /* Wymusza proporcje 3:2 (typowe dla fotografii sportowej) */
-    aspect-ratio: 3 / 2; 
-    overflow: hidden;
+    aspect-ratio: 3 / 2; /* Stałe proporcje 3:2 */
+    overflow: hidden;    /* Gwarantuje, że powiększone zdjęcie nie wyjdzie poza kafelek */
     border-radius: 6px;
+    background: #111;    /* Tło zapasowe */
   }
 
+  /* Samo zdjęcie wewnątrz kafelka */
   .gallery-item img {
     width: 100%;
     height: 100%;
-    /* Kluczowy element: zdjęcie wypełnia kadr bez zniekształceń */
-    object-fit: cover; 
-    transition: transform 0.5s ease;
+    object-fit: cover;   /* Zdjęcie wypełnia kadr bez zniekształceń */
+    cursor: pointer;     /* Zmienia kursor na rączkę, sugerując klikalność */
+    
+    /* PŁYNNOŚĆ: transformacja zajmie 0.5 sekundy i będzie miała miękki start/stop */
+    transition: transform 0.5s ease; 
     display: block;
   }
 
+  /* EFEKT NAJECHANIA MYSZKĄ */
   .gallery-item:hover img {
-    transform: scale(1.1); /* Efekt przybliżenia przy najechaniu */
+    /* Powiększenie zdjęcia o 10% */
+    transform: scale(1.1); 
+    /* Dodatkowo możemy delikatnie rozjaśnić zdjęcie, aby je wyróżnić */
+    filter: brightness(1.1);
   }
 
   /* Responsywność */
