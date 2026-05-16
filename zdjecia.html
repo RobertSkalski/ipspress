@@ -13,6 +13,7 @@
 
 <header>
   <nav class="nav-links">
+    <a href="index.html">Strona główna</a>
     <a href="zdjecia.html" style="color: #ff3344;">Zdjęcia</a>
     <a href="#">Wideo</a>
     <a href="#">Kategorie</a>
@@ -50,14 +51,43 @@
   <div class="gallery-item"><img src="foto/glowna/main3.jpg" alt="Zdjęcie 6"></div>
 </div>
 
-<footer>
-  <div class="footer-socials">
-    <a href="https://x.com/Skalski_Robert" target="_blank"><img src="elementy_graf/x.png" alt="X" class="icon-img"></a>
-    <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank"><img src="elementy_graf/fb.png" alt="FB" class="icon-img"></a>
-    <a href="https://www.instagram.com/robertskalski_photography/" target="_blank"><img src="elementy_graf/ig.png" alt="IG" class="icon-img"></a>
-    <a href="mailto:robertskalski20@gmail.com"><img src="elementy_graf/mail.png" alt="Email" class="icon-img"></a>
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+      <div class="footer-socials">
+        <a href="#"><img src="elementy_graf/x.png" alt="X"></a>
+        <a href="#"><img src="elementy_graf/fb.png" alt="FB"></a>
+        <a href="#"><img src="elementy_graf/ig.png" alt="IG"></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Nasza agencja</h4>
+      <a href="#">O nas</a>
+      <a href="#">Kariera</a>
+      <a href="#">Kontakt dla prasy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Produkty</h4>
+      <a href="#">Zdjęcia Editorial</a>
+      <a href="#">Pakiety dla klubów</a>
+      <a href="#">Wideo sportowe</a>
+      <a href="#">Sprzedaj swoje zdjęcia</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Prawo</h4>
+      <a href="#">Regulamin serwisu</a>
+      <a href="#">Polityka prywatności</a>
+      <a href="#">Rodzaje licencji</a>
+    </div>
   </div>
-  <p class="copyright-text">Wszystkie fotografie stanowią własność autora. Kopiowanie i rozpowszechnianie bez jego zgody jest zabronione.</p>
+  
+  <div class="footer-bottom">
+    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+  </div>
 </footer>
 
 <script>
@@ -67,7 +97,7 @@
     img.addEventListener('dragstart', function(e) { e.preventDefault(); });
   });
 
-  // Ten sam mechanizm logowania, by header działał
+  // Mechanizm logowania, by header działał tak samo
   let isLoggedIn = false; 
   function toggleLogin() {
     const btn = document.getElementById('loginBtn');
