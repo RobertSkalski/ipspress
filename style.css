@@ -452,3 +452,117 @@ header {
   .stats-wrapper { flex-direction: column; gap: 40px; }
   .story-content h2 { font-size: 32px; }
 }
+
+
+
+/* =========================================
+   12. ZAKŁADKA "KATEGORIE" (CREATIVE GRID)
+   ========================================= */
+.categories-section {
+  padding: 0 40px 100px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Elegancki odstęp między wielkimi kartami */
+}
+
+.category-card-wide {
+  display: flex;
+  background: #0a0a0a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.category-card-wide:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 51, 68, 0.3); /* Delikatny czerwony akcent wokół karty po najechaniu */
+}
+
+/* Część ze zdjęciem */
+.cat-image {
+  flex: 1;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.cat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.category-card-wide:hover .cat-image img {
+  transform: scale(1.05);
+}
+
+/* Część z tekstami */
+.cat-info {
+  flex: 1.5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+
+.cat-number {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 48px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03); /* Ogromny, bardzo subtelny numer w tle */
+  font-family: inherit;
+}
+
+.cat-info h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.category-card-wide:hover .cat-info h2 {
+  color: #ff3344; /* Zmiana koloru tytułu po najechaniu na kartę */
+}
+
+.cat-info p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.cat-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  align-self: flex-start;
+}
+
+.category-card-wide:hover .cat-link {
+  color: #ff3344;
+  padding-left: 5px; /* Delikatne przesunięcie strzałki przy najechaniu */
+}
+
+/* Responsywność dla kategorii */
+@media(max-width: 900px) {
+  .category-card-wide { flex-direction: column; }
+  .cat-image { max-height: 220px; }
+  .cat-info { padding: 30px; }
+  .cat-number { top: 20px; right: 30px; font-size: 36px; }
+}
+
+@media(max-width: 768px) {
+  .categories-section { padding: 0 20px 60px; }
+}
