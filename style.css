@@ -69,7 +69,7 @@ header {
 .lang-dropdown { position: relative; display: inline-block; }
 .lang-btn { background: transparent; color: white; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
 .lang-btn span { font-size: 10px; transition: transform 0.3s ease; }
-.lang-dropdown:hover .lang-btn span { transform: rotate(180deg); }
+.lang-dropdown:hover .lang-menu { display: block; }
 
 .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; min-width: 140px; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1); }
 .lang-dropdown:hover .lang-menu { display: block; }
@@ -107,7 +107,7 @@ header {
 .search-message { margin-top: 15px; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; display: none; }
 
 /* =========================================
-   4. NOWE SEKCJE (JASNE TŁO)
+   4. SEKCJE PROMO I KARUZELA (JASNE TŁO)
    ========================================= */
 .light-section {
   background: #ffffff;
@@ -249,9 +249,7 @@ header {
 .gallery-item:hover img { transform: scale(1.08); filter: brightness(0.8); }
 .gallery-item:hover .content-overlay { opacity: 1; }
 
-/* =========================================
-   7. FORMULARZ KONTAKTOWY
-   ========================================= */
+/* MAŁY FORMULARZ NA DOLE GALERII */
 .contact-section { max-width: 800px; margin: 0 auto 80px; padding: 50px; background: #0a0a0a; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
 .contact-section h2 { font-size: 32px; margin-bottom: 10px; font-weight: 700; }
 .contact-section p { color: #888; margin-bottom: 30px; font-size: 15px; }
@@ -262,7 +260,128 @@ header {
 .contact-form button { margin-top: 10px; width: 100%; font-size: 16px; padding: 16px; }
 
 /* =========================================
-   8. ROZBUDOWANA STOPKA
+   7. ZAKŁADKA "O NAS"
+   ========================================= */
+.about-hero { padding: 200px 20px 100px; text-align: center; background: #000; }
+.about-hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
+.about-hero .red-text { color: #ff3344; }
+.about-hero p { max-width: 700px; margin: 0 auto; font-size: 18px; color: #aaa; line-height: 1.6; }
+
+.stats-section { background: #111; padding: 60px 20px; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+.stats-wrapper { display: flex; justify-content: space-around; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 30px; }
+.stat-box { text-align: center; }
+.stat-box h3 { font-size: 48px; color: #ff3344; font-weight: 700; margin-bottom: 5px; }
+.stat-box span { font-size: 14px; font-weight: 600; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+
+.story-section { background: #fff; color: #000; padding: 100px 20px; }
+.story-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
+.story-image { flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.story-image img { width: 100%; display: block; transition: transform 0.5s ease; }
+.story-image:hover img { transform: scale(1.05); }
+.story-content { flex: 1; }
+.story-content h2 { font-size: 40px; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
+.story-content p { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px; }
+
+.team-section { background: #f4f5f6; color: #000; padding: 100px 20px; text-align: center; }
+.team-section h2 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+.team-subtitle { color: #666; font-size: 16px; margin-bottom: 50px; }
+.team-grid { display: flex; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
+.team-card { background: #fff; border-radius: 12px; overflow: hidden; width: 300px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+.team-card:hover { transform: translateY(-10px); }
+.team-photo img { width: 100%; height: 350px; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.3s; }
+.team-card:hover .team-photo img { filter: grayscale(0%); }
+.team-info { padding: 25px; }
+.team-info h3 { font-size: 20px; margin-bottom: 5px; font-weight: 700; }
+.team-info .role { display: block; color: #ff3344; font-size: 13px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
+.team-info p { font-size: 14px; color: #666; line-height: 1.6; }
+
+.cta-section { background: #000; padding: 100px 20px; text-align: center; }
+.cta-section h2 { font-size: 32px; font-weight: 700; margin-bottom: 30px; }
+
+/* =========================================
+   8. ZAKŁADKA "KONTAKT" (DZIELONY EKRAN)
+   ========================================= */
+.contact-page-section {
+  padding: 160px 20px 100px;
+  background: #000;
+  min-height: 80vh;
+}
+
+.contact-split-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-info-side {
+  flex: 1;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info-side h2 { font-size: 42px; margin-bottom: 20px; font-weight: 800; color: #fff; line-height: 1.2; }
+.contact-info-side p { color: #888; line-height: 1.6; margin-bottom: 50px; font-size: 16px; }
+
+.contact-details { list-style: none; }
+.contact-details li { margin-bottom: 25px; font-size: 16px; color: #ddd; display: flex; flex-direction: column; }
+.contact-details li span { font-size: 12px; text-transform: uppercase; color: #ff3344; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; }
+
+.contact-form-side {
+  flex: 1.2;
+  padding: 80px 60px;
+  background: #ffffff;
+  color: #000;
+}
+
+.contact-form-side h2 { font-size: 32px; margin-bottom: 30px; font-weight: 700; }
+
+.contact-form-light { display: flex; flex-direction: column; gap: 20px; }
+.contact-form-light input, .contact-form-light select, .contact-form-light textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f4f5f6;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.contact-form-light input:focus, .contact-form-light select:focus, .contact-form-light textarea:focus {
+  outline: none;
+  border-color: #ff3344;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255,51,68,0.1);
+}
+
+.contact-form-light textarea { resize: vertical; min-height: 160px; }
+
+.contact-form-light button {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 16px 40px;
+  background: #ff3344;
+  color: white;
+  border-radius: 30px; 
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+.contact-form-light button:hover { background: #d92635; transform: translateY(-2px); }
+
+/* =========================================
+   9. ROZBUDOWANA STOPKA
    ========================================= */
 .main-footer {
   background: #0a0a0a;
@@ -297,7 +416,7 @@ header {
 }
 
 /* =========================================
-   9. RESPONSYWNOŚĆ
+   10. RESPONSYWNOŚĆ
    ========================================= */
 @media(max-width: 1100px) {
   .photo-wall-grid { grid-template-columns: repeat(6, 1fr); }
@@ -309,6 +428,12 @@ header {
   .photo-wall-grid { grid-template-columns: repeat(4, 1fr); }
   .photo-wall-overlay h2 { font-size: 32px; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
+  
+  .contact-split-layout { flex-direction: column; }
+  .contact-info-side, .contact-form-side { padding: 50px 30px; }
+  .contact-info-side h2 { font-size: 32px; }
+  .about-hero h1 { font-size: 48px; }
+  .story-container { flex-direction: column; text-align: center; }
 }
 
 @media(max-width: 768px) {
@@ -322,132 +447,8 @@ header {
   .gallery { grid-template-columns: 1fr; padding: 20px; }
 }
 
-
-/* =========================================
-   10. ZAKŁADKA "O NAS"
-   ========================================= */
-.about-hero {
-  padding: 200px 20px 100px;
-  text-align: center;
-  background: #000; /* Ciemne tło zgrywające się z body */
-}
-.about-hero h1 {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 25px;
-  letter-spacing: -1px;
-}
-.about-hero .red-text { color: #ff3344; }
-.about-hero p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 18px;
-  color: #aaa;
-  line-height: 1.6;
-}
-
-/* Statystyki */
-.stats-section { background: #111; padding: 60px 20px; border-top: 1px solid #222; border-bottom: 1px solid #222; }
-.stats-wrapper {
-  display: flex; justify-content: space-around; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 30px;
-}
-.stat-box { text-align: center; }
-.stat-box h3 { font-size: 48px; color: #ff3344; font-weight: 700; margin-bottom: 5px; }
-.stat-box span { font-size: 14px; font-weight: 600; text-transform: uppercase; color: #888; letter-spacing: 1px; }
-
-/* Sekcja z opowieścią */
-.story-section { background: #fff; color: #000; padding: 100px 20px; }
-.story-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
-.story-image { flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-.story-image img { width: 100%; display: block; transition: transform 0.5s ease; }
-.story-image:hover img { transform: scale(1.05); }
-.story-content { flex: 1; }
-.story-content h2 { font-size: 40px; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
-.story-content p { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px; }
-
-/* Zespół */
-.team-section { background: #f4f5f6; color: #000; padding: 100px 20px; text-align: center; }
-.team-section h2 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
-.team-subtitle { color: #666; font-size: 16px; margin-bottom: 50px; }
-.team-grid { display: flex; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
-.team-card { background: #fff; border-radius: 12px; overflow: hidden; width: 300px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-.team-card:hover { transform: translateY(-10px); }
-.team-photo img { width: 100%; height: 350px; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.3s; }
-.team-card:hover .team-photo img { filter: grayscale(0%); }
-.team-info { padding: 25px; }
-.team-info h3 { font-size: 20px; margin-bottom: 5px; font-weight: 700; }
-.team-info .role { display: block; color: #ff3344; font-size: 13px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; }
-.team-info p { font-size: 14px; color: #666; line-height: 1.6; }
-
-/* CTA na dole O nas */
-.cta-section { background: #000; padding: 100px 20px; text-align: center; }
-.cta-section h2 { font-size: 32px; font-weight: 700; margin-bottom: 30px; }
-
-/* --- RESPONSYWNOŚĆ O NAS --- */
-@media(max-width: 900px) {
-  .about-hero h1 { font-size: 48px; }
-  .story-container { flex-direction: column; text-align: center; }
-}
 @media(max-width: 600px) {
   .about-hero h1 { font-size: 36px; }
   .stats-wrapper { flex-direction: column; gap: 40px; }
   .story-content h2 { font-size: 32px; }
 }
-
-/* =========================================
-   3. ZAKŁADKA KONTAKT (SPLIT LAYOUT)
-   ========================================= */
-.contact-page-section {
-  padding: 160px 20px 100px;
-  background: #000;
-  min-height: 80vh;
-}
-
-.contact-split-layout {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.contact-info-side {
-  flex: 1; padding: 80px 60px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-  display: flex; flex-direction: column; justify-content: center;
-}
-
-.contact-info-side h2 { font-size: 42px; margin-bottom: 20px; font-weight: 800; color: #fff; line-height: 1.2; }
-.contact-info-side p { color: #888; line-height: 1.6; margin-bottom: 50px; font-size: 16px; }
-
-.contact-details { list-style: none; }
-.contact-details li { margin-bottom: 25px; font-size: 16px; color: #ddd; display: flex; flex-direction: column; }
-.contact-details li span { font-size: 12px; text-transform: uppercase; color: #ff3344; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; }
-
-.contact-form-side {
-  flex: 1.2; padding: 80px 60px; background: #ffffff; color: #000;
-}
-
-.contact-form-side h2 { font-size: 32px; margin-bottom: 30px; font-weight: 700; }
-
-.contact-form-light { display: flex; flex-direction: column; gap: 20px; }
-.contact-form-light input, .contact-form-light select, .contact-form-light textarea {
-  width: 100%; padding: 16px 20px; border-radius: 8px; border: 1px solid #ddd;
-  background: #f4f5f6; color: #111; font-family: 'Montserrat', sans-serif; font-family: inherit; font-size: 15px; transition: all 0.3s ease;
-}
-
-.contact-form-light input:focus, .contact-form-light select:focus, .contact-form-light textarea:focus {
-  outline: none; border-color: #ff3344; background: #fff; box-shadow: 0 0 0 4px rgba(255,51,68,0.1);
-}
-
-.contact-form-light textarea { resize: vertical; min-height: 160px; }
-
-.contact-form-light button {
-  margin-top: 10px; align-self: flex-start; padding: 16px 40px;
-  background: #ff3344; color: white; border-radius: 30px; 
-  font-weight: 600; border: none; cursor: pointer; transition: 0.3s ease;
-}
-.contact-form-light button:hover { background: #d92635; transform: translateY(-2px); }
