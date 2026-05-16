@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kategorie | IPSPRESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="zdjecia.html">Zdjęcia</a>
+    <a href="kategorie.html" style="color: #ff3344;">Kategorie</a>
+    <a href="o-nas.html">O nas</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <div class="lang-dropdown">
+      <button class="lang-btn">Polski <span>▼</span></button>
+      <div class="lang-menu">
+        <a href="#">Polski</a>
+        <a href="#">English</a>
+        <a href="#">Español</a>
+        <a href="#">Français</a>
+      </div>
+    </div>
+    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Zaloguj się</button>
+  </div>
+</header>
+
+<section class="page-header">
+  <h1>Archiwum IPSPRESS</h1>
+  <p>Przeglądaj materiały posegregowane według tematów, dyscyplin oraz techniki wykonania.</p>
+</section>
+
+<section class="categories-section">
+  <div class="categories-grid">
+    
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main1.jpg" alt="Ujęcia z drona"></div>
+      <div class="cat-info">
+        <span class="cat-number">01</span>
+        <h2>Fotografia z powietrza / Dron</h2>
+        <p>Spektakularne, wielkoformatowe ujęcia z lotu ptaka. Dokumentujemy pełną geometrię stadionów, tory wyścigowe oraz masowe imprezy sportowe z perspektywy, która zapiera dech w piersiach.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main2.jpg" alt="Piłka nożna"></div>
+      <div class="cat-info">
+        <span class="cat-number">02</span>
+        <h2>Piłka nożna</h2>
+        <p>Od emocji na trybunach, przez taktyczną walkę w środku pola, aż po kluczowe bramki w najważniejszych minutach meczu. Pełny serwis meczowy dla klubów, agencji i prasy.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main3.jpg" alt="Siatkówka"></div>
+      <div class="cat-info">
+        <span class="cat-number">03</span>
+        <h2>Siatkówka</h2>
+        <p>Zatrzymana w ułamku sekundy dynamika potężnych zagrywek, walka na bloku i widowiskowe obrony na parkiecie. Pokazujemy każdy detal halowych rozgrywek na najwyższym poziomie.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main1.jpg" alt="Motorsport"></div>
+      <div class="cat-info">
+        <span class="cat-number">04</span>
+        <h2>Motorsport</h2>
+        <p>Ryk silników, prędkość i adrenalina zamrożone w kadrze. Kadry z torów wyścigowych, rajdów terenowych i parku maszyn, kładące nacisk na dynamikę maszyn i kunszt kierowców.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main2.jpg" alt="Koszykówka"></div>
+      <div class="cat-info">
+        <span class="cat-number">05</span>
+        <h2>Koszykówka</h2>
+        <p>Szybkie kontrataki, widowiskowe wsady nad obręczą i emocje w strefie podkoszowej. Nasze obiektywy doskonale radzą sobie ze specyfiką trudnego i dynamicznego oświetlenia halowego.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+    <div class="category-card-wide">
+      <div class="cat-image"><img src="foto/glowna/main3.jpg" alt="Futsal"></div>
+      <div class="cat-info">
+        <span class="cat-number">06</span>
+        <h2>Futsal</h2>
+        <p>Halowa odmiana futbolu charakteryzująca się zawrotnym tempem akcji. Skupiamy się na technicznych detalach gry, pojedynkach jeden na jeden i błyskawicznych reakcjach bramkarzy.</p>
+        <a href="#" class="cat-link">Zobacz kolekcję →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+      <div class="footer-socials">
+        <a href="#"><img src="elementy_graf/x.png" alt="X"></a>
+        <a href="#"><img src="elementy_graf/fb.png" alt="FB"></a>
+        <a href="#"><img src="elementy_graf/ig.png" alt="IG"></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Nasza agencja</h4>
+      <a href="o-nas.html">O nas</a>
+      <a href="#">Kariera</a>
+      <a href="#">Kontakt dla prasy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Produkty</h4>
+      <a href="#">Zdjęcia Editorial</a>
+      <a href="#">Pakiety dla klubów</a>
+      <a href="#">Sprzedaj swoje zdjęcia</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Prawo</h4>
+      <a href="#">Regulamin serwisu</a>
+      <a href="#">Polityka prywatności</a>
+      <a href="#">Rodzaje licencji</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+  </div>
+</footer>
+
+<script>
+  let isLoggedIn = false; 
+  function toggleLogin() {
+    const btn = document.getElementById('loginBtn');
+    if (!isLoggedIn) {
+      isLoggedIn = true;
+      btn.innerText = "Wyloguj się";
+      btn.style.background = "#4CAF50"; 
+      btn.style.color = "white";
+      alert("Zalogowano pomyślnie!");
+    } else {
+      isLoggedIn = false;
+      btn.innerText = "Zaloguj się";
+      btn.style.background = "white";
+      btn.style.color = "black";
+      alert("Wylogowano.");
+    }
+  }
+
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
