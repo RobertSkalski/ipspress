@@ -566,3 +566,143 @@ header {
 @media(max-width: 768px) {
   .categories-section { padding: 0 20px 60px; }
 }
+
+
+/* =========================================
+   12. PODSTRONA LOGOWANIA
+   ========================================= */
+.login-page-section {
+  padding: 160px 20px 100px;
+  background: #000;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 480px;
+  background: #0a0a0a;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+.login-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #aaa;
+  letter-spacing: 0.5px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  background: #111;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+  outline: none;
+  border-color: #ff3344;
+  background: #151515;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.remember-me input {
+  accent-color: #ff3344;
+}
+
+.forgot-pass {
+  color: #ff3344;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.forgot-pass:hover {
+  color: #d92635;
+}
+
+.login-submit-btn {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.register-prompt {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #666;
+}
+
+.register-prompt a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.register-prompt a:hover {
+  color: #ff3344;
+}
+
+@media(max-width: 480px) {
+  .login-container { padding: 40px 20px; border-radius: 0; border: none; }
+  .login-page-section { padding: 120px 0 60px; }
+}
