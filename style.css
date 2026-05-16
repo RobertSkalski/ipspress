@@ -454,6 +454,7 @@ header {
 }
 
 
+/* ... tutaj kończą się wcześniejsze style, np. .footer-bottom { ... } ... */
 
 /* =========================================
    12. ZAKŁADKA "KATEGORIE" (CREATIVE GRID)
@@ -467,7 +468,7 @@ header {
 .categories-grid {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Elegancki odstęp między wielkimi kartami */
+  gap: 40px; 
 }
 
 .category-card-wide {
@@ -481,10 +482,9 @@ header {
 
 .category-card-wide:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 51, 68, 0.3); /* Delikatny czerwony akcent wokół karty po najechaniu */
+  border-color: rgba(255, 51, 68, 0.3); 
 }
 
-/* Część ze zdjęciem */
 .cat-image {
   flex: 1;
   max-height: 300px;
@@ -503,7 +503,6 @@ header {
   transform: scale(1.05);
 }
 
-/* Część z tekstami */
 .cat-info {
   flex: 1.5;
   padding: 40px;
@@ -519,7 +518,7 @@ header {
   right: 40px;
   font-size: 48px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.03); /* Ogromny, bardzo subtelny numer w tle */
+  color: rgba(255, 255, 255, 0.03); 
   font-family: inherit;
 }
 
@@ -531,7 +530,7 @@ header {
 }
 
 .category-card-wide:hover .cat-info h2 {
-  color: #ff3344; /* Zmiana koloru tytułu po najechaniu na kartę */
+  color: #ff3344; 
 }
 
 .cat-info p {
@@ -552,19 +551,7 @@ header {
 
 .category-card-wide:hover .cat-link {
   color: #ff3344;
-  padding-left: 5px; /* Delikatne przesunięcie strzałki przy najechaniu */
-}
-
-/* Responsywność dla kategorii */
-@media(max-width: 900px) {
-  .category-card-wide { flex-direction: column; }
-  .cat-image { max-height: 220px; }
-  .cat-info { padding: 30px; }
-  .cat-number { top: 20px; right: 30px; font-size: 36px; }
-}
-
-@media(max-width: 768px) {
-  .categories-section { padding: 0 20px 60px; }
+  padding-left: 5px; 
 }
 
 
@@ -702,7 +689,11 @@ header {
   color: #ff3344;
 }
 
-@media(max-width: 480px) {
-  .login-container { padding: 40px 20px; border-radius: 0; border: none; }
-  .login-page-section { padding: 120px 0 60px; }
+
+/* =========================================
+   10. RESPONSYWNOŚĆ
+   ========================================= */
+@media(max-width: 1100px) {
+  .photo-wall-grid { grid-template-columns: repeat(6, 1fr); }
 }
+/* ... i tutaj leci cała reszta Twoich reguł @media aż do końca pliku ... */
