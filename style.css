@@ -32,12 +32,18 @@ header {
 .nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s ease; }
 .nav-links a:hover { color: #aaaaaa; }
 
-/* Logo jako link (usunięto pointer-events: none) */
+/* LOGO - Twardy reset dla znacznika <a>, żeby nie był niebieski */
 .logo {
   position: absolute; left: 50%; transform: translateX(-50%);
   font-size: 24px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: white; text-decoration: none;
+  text-transform: uppercase; 
+  color: #ffffff !important; /* Wymuszony biały kolor */
+  text-decoration: none !important; /* Usunięte podkreślenie */
   z-index: 10;
+}
+.logo:hover, .logo:visited, .logo:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
 
 .header-actions { display: flex; align-items: center; gap: 20px; z-index: 10; }
@@ -57,16 +63,11 @@ header {
 .btn-login:active { transform: scale(0.95); }
 
 /* =========================================
-   3. SEKCJA POWITALNA (LANDING PAGE)
+   3. SEKCJA POWITALNA (Z WYSZUKIWARKĄ)
    ========================================= */
 .welcome-section {
   display: flex; flex-direction: column; justify-content: center; align-items: center;
-  padding-top: 80px; text-align: center;
-}
-
-/* Klasa używana w index.html, żeby wypełnić ładnie środek ekranu */
-.landing-full {
-  min-height: 80vh; /* Zajmuje 80% wysokości okna, spychając stopkę na dół */
+  padding-top: 150px; padding-bottom: 50px; text-align: center;
 }
 
 .typing-container { display: inline-block; }
@@ -77,7 +78,6 @@ header {
 @keyframes blink-caret-main { 50% { border-color: #ffffff; } 100% { border-color: transparent; } }
 @keyframes blink-caret-sub { 50% { border-color: #ffffff; } 100% { border-color: transparent; } }
 
-/* Wyszukiwarka */
 .search-wrapper { margin-top: 40px; width: 100%; max-width: 700px; opacity: 0; animation: fadeIn 1s ease 2.5s forwards; }
 @keyframes fadeIn { to { opacity: 1; } }
 
@@ -90,25 +90,27 @@ header {
 .search-message { margin-top: 15px; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; display: none; }
 
 /* =========================================
-   4. PODSTRONY (Nagłówek i Galeria)
+   4. KATEGORIE / GALERIA
    ========================================= */
-.page-header {
-  padding: 160px 20px 40px;
-  text-align: center;
-}
-.page-header h1 {
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-.page-header p { color: #aaa; font-size: 16px; }
-
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px 40px 80px; max-width: 1400px; margin: 0 auto; }
-.gallery-item { width: 100%; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 6px; background: #111; cursor: pointer; }
+.gallery-item { position: relative; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 6px; background: #111; cursor: pointer; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.6s ease; display: block; -webkit-user-drag: none; user-select: none; }
-.gallery-item:hover img { transform: scale(1.08); filter: brightness(0.8); }
+
+/* --- OVERLAY (Ściemnienie i napis) --- */
+.content-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.overlay-text {
+  color: white; font-size: 16px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; text-align: center; padding: 0 15px;
+}
+
+/* Zachowanie po najechaniu myszką */
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item:hover .content-overlay { opacity: 1; }
 
 /* =========================================
    5. STOPKA
@@ -133,6 +135,6 @@ footer { width: 100%; padding: 60px 20px 40px; text-align: center; background: r
   header { padding: 15px 20px; }
   .nav-links, .lang-dropdown { display: none; }
   .logo { position: static; transform: none; margin-right: auto; }
-  .welcome-section { min-height: 50vh; }
+  .welcome-section { padding-top: 100px; }
   .gallery { grid-template-columns: 1fr; padding: 20px; }
 }
