@@ -394,3 +394,85 @@ header {
   .stats-wrapper { flex-direction: column; gap: 40px; }
   .story-content h2 { font-size: 32px; }
 }
+
+
+/* =========================================
+   11. ZAKŁADKA "KONTAKT"
+   ========================================= */
+.contact-page-section {
+  padding: 160px 20px 100px;
+  background: #000;
+  min-height: 80vh;
+}
+
+.contact-split-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Lewa strona - ciemna */
+.contact-info-side {
+  flex: 1;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info-side h2 { font-size: 42px; margin-bottom: 20px; font-weight: 800; color: #fff; line-height: 1.2; }
+.contact-info-side p { color: #888; line-height: 1.6; margin-bottom: 50px; font-size: 16px; }
+
+.contact-details { list-style: none; }
+.contact-details li { margin-bottom: 25px; font-size: 16px; color: #ddd; display: flex; flex-direction: column; }
+.contact-details li span { font-size: 12px; text-transform: uppercase; color: #ff3344; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; }
+
+/* Prawa strona - jasna, formularz */
+.contact-form-side {
+  flex: 1.2; /* Troszkę szersza dla wygody wypełniania */
+  padding: 80px 60px;
+  background: #ffffff;
+  color: #000;
+}
+
+.contact-form-side h2 { font-size: 32px; margin-bottom: 30px; font-weight: 700; }
+
+.contact-form-light { display: flex; flex-direction: column; gap: 20px; }
+.contact-form-light input, .contact-form-light select, .contact-form-light textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f4f5f6;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.contact-form-light input:focus, .contact-form-light select:focus, .contact-form-light textarea:focus {
+  outline: none;
+  border-color: #ff3344;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255,51,68,0.1); /* Lekka czerwona poświata przy kliknięciu */
+}
+
+.contact-form-light textarea { resize: vertical; min-height: 160px; }
+
+.contact-form-light button {
+  margin-top: 10px;
+  align-self: flex-start; /* Guzik wyrównany do lewej */
+  padding: 16px 40px;
+}
+
+/* Responsywność dla kontaktu */
+@media(max-width: 900px) {
+  .contact-split-layout { flex-direction: column; }
+  .contact-info-side, .contact-form-side { padding: 50px 30px; }
+  .contact-info-side h2 { font-size: 32px; }
+}
