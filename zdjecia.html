@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zdjęcia | IPSPRESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="zdjecia.html" style="color: #ff3344;">Zdjęcia</a>
+    <a href="#">Wideo</a>
+    <a href="#">Kategorie</a>
+    <a href="#">O nas</a>
+    <a href="#">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <div class="lang-dropdown">
+      <button class="lang-btn">Polski <span>▼</span></button>
+      <div class="lang-menu">
+        <a href="#">Polski</a>
+        <a href="#">English</a>
+        <a href="#">Español</a>
+        <a href="#">Français</a>
+      </div>
+    </div>
+    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Zaloguj się</button>
+  </div>
+</header>
+
+<section class="page-header">
+  <h1>Najnowsze Zdjęcia</h1>
+  <p>Przeglądaj naszą ekskluzywną bazę fotografii sportowej.</p>
+</section>
+
+<div class="gallery">
+  <div class="gallery-item"><img src="foto/glowna/main1.jpg" alt="Zdjęcie 1"></div>
+  <div class="gallery-item"><img src="foto/glowna/main2.jpg" alt="Zdjęcie 2"></div>
+  <div class="gallery-item"><img src="foto/glowna/main3.jpg" alt="Zdjęcie 3"></div>
+  <div class="gallery-item"><img src="foto/glowna/main1.jpg" alt="Zdjęcie 4"></div>
+  <div class="gallery-item"><img src="foto/glowna/main2.jpg" alt="Zdjęcie 5"></div>
+  <div class="gallery-item"><img src="foto/glowna/main3.jpg" alt="Zdjęcie 6"></div>
+</div>
+
+<footer>
+  <div class="footer-socials">
+    <a href="https://x.com/Skalski_Robert" target="_blank"><img src="elementy_graf/x.png" alt="X" class="icon-img"></a>
+    <a href="https://www.facebook.com/RobertSkalskiPhotography" target="_blank"><img src="elementy_graf/fb.png" alt="FB" class="icon-img"></a>
+    <a href="https://www.instagram.com/robertskalski_photography/" target="_blank"><img src="elementy_graf/ig.png" alt="IG" class="icon-img"></a>
+    <a href="mailto:robertskalski20@gmail.com"><img src="elementy_graf/mail.png" alt="Email" class="icon-img"></a>
+  </div>
+  <p class="copyright-text">Wszystkie fotografie stanowią własność autora. Kopiowanie i rozpowszechnianie bez jego zgody jest zabronione.</p>
+</footer>
+
+<script>
+  // Zabezpieczenie zdjęć na podstronie
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+
+  // Ten sam mechanizm logowania, by header działał
+  let isLoggedIn = false; 
+  function toggleLogin() {
+    const btn = document.getElementById('loginBtn');
+    if (!isLoggedIn) {
+      isLoggedIn = true;
+      btn.innerText = "Wyloguj się";
+      btn.style.background = "#4CAF50"; 
+      btn.style.color = "white";
+      alert("Zalogowano pomyślnie!");
+    } else {
+      isLoggedIn = false;
+      btn.innerText = "Zaloguj się";
+      btn.style.background = "white";
+      btn.style.color = "black";
+      alert("Wylogowano.");
+    }
+  }
+</script>
+
+</body>
+</html>
