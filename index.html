@@ -11,6 +11,13 @@
 </head>
 <body>
 
+<div class="bg-slideshow">
+  <div class="bg-slide active" style="background-image: url('foto/glowna/main1.jpg');"></div>
+  <div class="bg-slide" style="background-image: url('foto/glowna/main2.jpg');"></div>
+  <div class="bg-slide" style="background-image: url('foto/glowna/main3.jpg');"></div>
+  <div class="bg-slide" style="background-image: url('foto/glowna/main4.jpg');"></div>
+</div>
+
 <header>
   <nav class="nav-links">
     <a href="index.html">Strona główna</a>
@@ -70,65 +77,21 @@
   </div>
 </section>
 
-<section class="gray-section">
-  <div class="features-container">
-    <h2>Jedna agencja. Nieograniczone możliwości.</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <img src="foto/glowna/main2.jpg" alt="Premium">
-        <span>Zawartość klasy premium</span>
-      </div>
-      <div class="feature-card">
-        <img src="foto/glowna/main3.jpg" alt="Produkcja">
-        <span>Produkcja niestandardowa</span>
-      </div>
-      <div class="feature-card">
-        <img src="foto/glowna/main1.jpg" alt="Baza">
-        <span>Setki utalentowanych twórców</span>
-      </div>
-      <div class="feature-card">
-        <img src="foto/glowna/main2.jpg" alt="Licencje">
-        <span>Pełne pakiety licencyjne</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="light-section">
   <div class="slider-container">
     <h3>Zaufały nam największe firmy na świecie</h3>
     <div class="slider-overflow">
       <div class="slider-track">
-        <div class="slide-logo">UEFA</div>
-        <div class="slide-logo">FIFA</div>
-        <div class="slide-logo">Red Bull</div>
-        <div class="slide-logo">Canal+</div>
-        <div class="slide-logo">Polsat Sport</div>
-        <div class="slide-logo">Nike</div>
-        <div class="slide-logo">Adidas</div>
-        <div class="slide-logo">PZPN</div>
-        <div class="slide-logo">Ekstraklasa</div>
-        <div class="slide-logo">Onet</div>
-        <div class="slide-logo">Wirtualna Polska</div>
-        <div class="slide-logo">Eurosport</div>
-        <div class="slide-logo">Eleven Sports</div>
-        <div class="slide-logo">Orlen</div>
-        <div class="slide-logo">InPost</div>
-        <div class="slide-logo">UEFA</div>
-        <div class="slide-logo">FIFA</div>
-        <div class="slide-logo">Red Bull</div>
-        <div class="slide-logo">Canal+</div>
-        <div class="slide-logo">Polsat Sport</div>
-        <div class="slide-logo">Nike</div>
-        <div class="slide-logo">Adidas</div>
-        <div class="slide-logo">PZPN</div>
-        <div class="slide-logo">Ekstraklasa</div>
-        <div class="slide-logo">Onet</div>
-        <div class="slide-logo">Wirtualna Polska</div>
-        <div class="slide-logo">Eurosport</div>
-        <div class="slide-logo">Eleven Sports</div>
-        <div class="slide-logo">Orlen</div>
-        <div class="slide-logo">InPost</div>
+        <div class="slide-logo">UEFA</div><div class="slide-logo">FIFA</div><div class="slide-logo">Red Bull</div>
+        <div class="slide-logo">Canal+</div><div class="slide-logo">Polsat Sport</div><div class="slide-logo">Nike</div>
+        <div class="slide-logo">Adidas</div><div class="slide-logo">PZPN</div><div class="slide-logo">Ekstraklasa</div>
+        <div class="slide-logo">Onet</div><div class="slide-logo">Wirtualna Polska</div><div class="slide-logo">Eurosport</div>
+        <div class="slide-logo">Eleven Sports</div><div class="slide-logo">Orlen</div><div class="slide-logo">InPost</div>
+        <div class="slide-logo">UEFA</div><div class="slide-logo">FIFA</div><div class="slide-logo">Red Bull</div>
+        <div class="slide-logo">Canal+</div><div class="slide-logo">Polsat Sport</div><div class="slide-logo">Nike</div>
+        <div class="slide-logo">Adidas</div><div class="slide-logo">PZPN</div><div class="slide-logo">Ekstraklasa</div>
+        <div class="slide-logo">Onet</div><div class="slide-logo">Wirtualna Polska</div><div class="slide-logo">Eurosport</div>
+        <div class="slide-logo">Eleven Sports</div><div class="slide-logo">Orlen</div><div class="slide-logo">InPost</div>
       </div>
     </div>
   </div>
@@ -158,7 +121,6 @@
     <a href="mailto:kontakt@twojadomena.pl" class="btn-red">Napisz do nas</a>
   </div>
 </section>
-
   
 <footer class="main-footer">
   <div class="footer-grid">
@@ -200,8 +162,20 @@
 </footer>
 
 <script>
-  let isLoggedIn = false; 
+  // TUTAJ JEST SKRYPT OD ZMIANY ZDJĘĆ CO 10 SEKUND
+  const slides = document.querySelectorAll('.bg-slide');
+  let currentSlide = 0;
 
+  if(slides.length > 0) {
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 10000); // 10000 ms = 10 sekund
+  }
+
+  // LOGIKA LOGOWANIA
+  let isLoggedIn = false; 
   function toggleLogin() {
     const btn = document.getElementById('loginBtn');
     if (!isLoggedIn) {
@@ -220,6 +194,7 @@
     }
   }
 
+  // LOGIKA WYSZUKIWARKI
   function handleSearch() {
     const msg = document.getElementById('searchMessage');
     const input = document.getElementById('searchInput').value;
