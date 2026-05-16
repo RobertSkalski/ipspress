@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nas | IPSPRESS</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="zdjecia.html">Zdjęcia</a>
+    <a href="#">Kategorie</a>
+    <a href="o-nas.html" style="color: #ff3344;">O nas</a>
+    <a href="#">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <div class="lang-dropdown">
+      <button class="lang-btn">Polski <span>▼</span></button>
+      <div class="lang-menu">
+        <a href="#">Polski</a>
+        <a href="#">English</a>
+        <a href="#">Español</a>
+        <a href="#">Français</a>
+      </div>
+    </div>
+    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Zaloguj się</button>
+  </div>
+</header>
+
+<section class="about-hero">
+  <h1>Nie robimy zdjęć.<br><span class="red-text">Opowiadamy historie.</span></h1>
+  <p>Jesteśmy agencją fotograficzną, która żyje w samym sercu sportowych i biznesowych emocji. Tam, gdzie inni widzą tylko ułamek sekundy, my dostrzegamy kadr, który przejdzie do historii.</p>
+</section>
+
+<section class="stats-section">
+  <div class="stats-wrapper">
+    <div class="stat-box">
+      <h3>10+</h3>
+      <span>Lat na rynku</span>
+    </div>
+    <div class="stat-box">
+      <h3>500+</h3>
+      <span>Obsłużonych wydarzeń</span>
+    </div>
+    <div class="stat-box">
+      <h3>1M+</h3>
+      <span>Wykonanych kadrów</span>
+    </div>
+    <div class="stat-box">
+      <h3>24/7</h3>
+      <span>Gotowość do akcji</span>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-container">
+    <div class="story-image">
+      <img src="foto/glowna/main2.jpg" alt="Fotograf w akcji na stadionie">
+    </div>
+    <div class="story-content">
+      <h2>Nasza misja to perfekcja.</h2>
+      <p>IPSPRESS narodziło się z pasji do sportu i obsesji na punkcie idealnego obrazu. Wiemy, że o ujęciu, które trafia na okładki największych magazynów, często decydują milimetry i ułamki sekund.</p>
+      <p>Nasz sprzęt to tylko narzędzie. Największą wartością jest instynkt naszych fotografów. Jesteśmy dumni z tego, że współpracujemy z największymi markami, dostarczając im materiały premium w rekordowym czasie, prosto z murawy, parkietu czy toru wyścigowego.</p>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <h2>Poznajmy się bliżej</h2>
+  <p class="team-subtitle">Zawsze w centrum wydarzeń. Gotowi na każde wyzwanie.</p>
+  
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="foto/glowna/main1.jpg" alt="Robert Skalski">
+      </div>
+      <div class="team-info">
+        <h3>Robert Skalski</h3>
+        <span class="role">Główny Fotograf / Founder</span>
+        <p>Człowiek od zadań specjalnych. Z aparatem zjechał pół świata, dokumentując najważniejsze turnieje piłkarskie i imprezy motorsportowe.</p>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="cta-section">
+  <h2>Masz projekt, który wymaga najlepszej oprawy?</h2>
+  <a href="mailto:kontakt@twojadomena.pl" class="btn-red">Rozpocznijmy współpracę</a>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+      <div class="footer-socials">
+        <a href="#"><img src="elementy_graf/x.png" alt="X"></a>
+        <a href="#"><img src="elementy_graf/fb.png" alt="FB"></a>
+        <a href="#"><img src="elementy_graf/ig.png" alt="IG"></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Nasza agencja</h4>
+      <a href="#">O nas</a>
+      <a href="#">Kariera</a>
+      <a href="#">Kontakt dla prasy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Produkty</h4>
+      <a href="#">Zdjęcia Editorial</a>
+      <a href="#">Pakiety dla klubów</a>
+      <a href="#">Sprzedaj swoje zdjęcia</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Prawo</h4>
+      <a href="#">Regulamin serwisu</a>
+      <a href="#">Polityka prywatności</a>
+      <a href="#">Rodzaje licencji</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+  </div>
+</footer>
+
+<script>
+  let isLoggedIn = false; 
+  function toggleLogin() {
+    const btn = document.getElementById('loginBtn');
+    if (!isLoggedIn) {
+      isLoggedIn = true;
+      btn.innerText = "Wyloguj się";
+      btn.style.background = "#4CAF50"; 
+      btn.style.color = "white";
+      alert("Zalogowano pomyślnie!");
+    } else {
+      isLoggedIn = false;
+      btn.innerText = "Zaloguj się";
+      btn.style.background = "white";
+      btn.style.color = "black";
+      alert("Wylogowano.");
+    }
+  }
+
+  // Blokada zapisu zdjęć
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
