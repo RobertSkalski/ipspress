@@ -1,14 +1,9 @@
 /* =========================================
    1. RESET I PODSTAWY
    ========================================= */
-
-   /* =========================================
-   1. RESET I PODSTAWY
-   ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  /* Usunęliśmy stąd tło! Przenieśliśmy je do osobnego slidera */
   background-color: #000;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -20,11 +15,10 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  z-index: -1; /* Zawsze z tyłu, pod treścią strony */
+  z-index: -1; 
   background-color: #000;
 }
 
-/* Lekkie przyciemnienie na zdjęcia, żeby biały tekst był czytelny */
 .bg-slideshow::after {
   content: '';
   position: absolute;
@@ -41,8 +35,12 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out; /* Bardzo łagodne, 1.5-sekundowe przenikanie */
+  transition: opacity 1.5s ease-in-out; 
   z-index: 0;
+}
+
+.bg-slide.active {
+  opacity: 1;
 }
 
 /* =========================================
@@ -98,7 +96,6 @@ header {
 @keyframes blink-caret-main { 50% { border-color: #ffffff; } 100% { border-color: transparent; } }
 @keyframes blink-caret-sub { 50% { border-color: #ffffff; } 100% { border-color: transparent; } }
 
-/* --- WYSZUKIWARKA (Szybsza animacja) --- */
 .search-wrapper { margin-top: 40px; width: 100%; max-width: 700px; opacity: 0; animation: fadeIn 0.6s ease 0.8s forwards; }
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(20px); } }
 
@@ -110,7 +107,7 @@ header {
 .search-message { margin-top: 15px; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; display: none; }
 
 /* =========================================
-   4. NOWE SEKCJE (JASNE TŁO)
+   4. SEKCJE PROMO I KARUZELA (JASNE TŁO)
    ========================================= */
 .light-section {
   background: #ffffff;
@@ -120,15 +117,6 @@ header {
   z-index: 5;
 }
 
-.gray-section {
-  background: #f4f5f6;
-  color: #111;
-  padding: 80px 20px;
-  position: relative;
-  z-index: 5;
-}
-
-/* Sekcja Promo (Agencja) */
 .promo-container {
   display: flex;
   align-items: center;
@@ -148,14 +136,16 @@ header {
   background: #ff3344;
   color: white;
   padding: 14px 30px;
-  border-radius: 30px; /* Zaokrąglony guzik jak u Ciebie */
+  border-radius: 30px; 
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }
 .btn-red:hover { background: #d92635; transform: translateY(-2px); }
 
-/* Sekcja Karuzeli Logo */
 .slider-container { max-width: 1200px; margin: 0 auto; text-align: center; }
 .slider-container h3 { font-size: 24px; font-weight: 600; margin-bottom: 40px; color: #333; }
 .slider-overflow {
@@ -163,7 +153,6 @@ header {
   white-space: nowrap;
   position: relative;
 }
-/* Tworzymy gradienty po bokach, żeby loga łagodnie "znikały" */
 .slider-overflow::before, .slider-overflow::after {
   content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2;
 }
@@ -174,12 +163,11 @@ header {
   display: flex;
   gap: 60px;
   width: max-content;
-  /* Animacja trwająca 30s, w nieskończoność */
   animation: scrollLogos 30s linear infinite;
 }
 
 .slider-track:hover {
-  animation-play-state: paused; /* Zatrzymuje się po najechaniu! */
+  animation-play-state: paused; 
 }
 
 .slide-logo {
@@ -193,46 +181,11 @@ header {
 }
 @keyframes scrollLogos {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Przesuwa się o połowę (bo skopiowaliśmy loga 2x) */
+  100% { transform: translateX(-50%); } 
 }
 
 /* =========================================
-   5. ROZBUDOWANA STOPKA
-   ========================================= */
-.main-footer {
-  background: #0a0a0a;
-  color: #fff;
-  padding: 80px 20px 40px;
-  position: relative;
-  z-index: 5;
-  border-top: 1px solid #222;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 40px;
-}
-.footer-brand h2 { font-size: 24px; margin-bottom: 20px; letter-spacing: 2px; }
-.footer-socials { display: flex; gap: 15px; }
-.footer-socials img { width: 20px; filter: invert(1); opacity: 0.7; transition: 0.3s; }
-.footer-socials img:hover { opacity: 1; }
-
-.footer-col h4 { font-size: 16px; margin-bottom: 20px; color: #fff; }
-.footer-col a { display: block; color: #aaa; text-decoration: none; font-size: 13px; margin-bottom: 12px; transition: color 0.3s; }
-.footer-col a:hover { color: #fff; }
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #222;
-  padding-top: 20px;
-  font-size: 11px;
-  color: #666;
-}
-
-/* =========================================
-   5. NOWOŚĆ: ŚCIANA ZDJĘĆ (PHOTO WALL)
+   5. ŚCIANA ZDJĘĆ (PHOTO WALL)
    ========================================= */
 .photo-wall-section {
   position: relative;
@@ -243,13 +196,13 @@ header {
 
 .photo-wall-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 8 kolumn */
-  gap: 0; /* Brak odstępów! */
+  grid-template-columns: repeat(8, 1fr); 
+  gap: 0; 
 }
 
 .photo-wall-grid img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Wymusza idealne kwadraty */
+  aspect-ratio: 1 / 1; 
   object-fit: cover;
   display: block;
 }
@@ -257,7 +210,7 @@ header {
 .photo-wall-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Głębokie, eleganckie przyciemnienie */
+  background: rgba(0, 0, 0, 0.7); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -311,20 +264,63 @@ header {
 .contact-form textarea { resize: vertical; min-height: 120px; }
 .contact-form button { margin-top: 10px; width: 100%; font-size: 16px; padding: 16px; }
 
+/* =========================================
+   8. ROZBUDOWANA STOPKA
+   ========================================= */
+.main-footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 80px 20px 40px;
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid #222;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+.footer-brand h2 { font-size: 24px; margin-bottom: 20px; letter-spacing: 2px; }
+.footer-socials { display: flex; gap: 15px; }
+.footer-socials img { width: 20px; filter: invert(1); opacity: 0.7; transition: 0.3s; }
+.footer-socials img:hover { opacity: 1; }
+
+.footer-col h4 { font-size: 16px; margin-bottom: 20px; color: #fff; }
+.footer-col a { display: block; color: #aaa; text-decoration: none; font-size: 13px; margin-bottom: 12px; transition: color 0.3s; }
+.footer-col a:hover { color: #fff; }
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  font-size: 11px;
+  color: #666;
+}
 
 /* =========================================
-   6. RESPONSYWNOŚĆ
+   9. RESPONSYWNOŚĆ
    ========================================= */
+@media(max-width: 1100px) {
+  .photo-wall-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
 @media(max-width: 900px) {
   .promo-container { flex-direction: column; text-align: center; }
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .photo-wall-grid { grid-template-columns: repeat(4, 1fr); }
+  .photo-wall-overlay h2 { font-size: 32px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media(max-width: 768px) {
   header { padding: 15px 20px; }
   .nav-links, .lang-dropdown { display: none; }
   .logo { position: static; transform: none; margin-right: auto; }
-  .features-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .footer-socials { justify-content: center; }
+  .photo-wall-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-section { padding: 30px 20px; margin: 0 20px 60px; }
+  .gallery { grid-template-columns: 1fr; padding: 20px; }
 }
