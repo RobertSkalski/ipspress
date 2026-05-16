@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | IPSPRESS</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="zdjecia.html">Zdjęcia</a>
+    <a href="#">Kategorie</a>
+    <a href="o-nas.html">O nas</a>
+    <a href="kontakt.html" style="color: #ff3344;">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <div class="lang-dropdown">
+      <button class="lang-btn">Polski <span>▼</span></button>
+      <div class="lang-menu">
+        <a href="#">Polski</a>
+        <a href="#">English</a>
+        <a href="#">Español</a>
+        <a href="#">Français</a>
+      </div>
+    </div>
+    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Zaloguj się</button>
+  </div>
+</header>
+
+<section class="contact-page-section">
+  <div class="contact-split-layout">
+    
+    <div class="contact-info-side">
+      <h2>Złapmy kadr.<br>I kontakt.</h2>
+      <p>Masz pytania dotyczące licencji, potrzebujesz fotografa na jutro, a może chcesz dołączyć do naszego zespołu? Jesteśmy do Twojej dyspozycji 24/7.</p>
+      
+      <ul class="contact-details">
+        <li><span>Email do redakcji</span> kontakt@ipspress.pl</li>
+        <li><span>Telefon (Biuro)</span> +48 123 456 789</li>
+        <li><span>Główna siedziba</span> ul. Sportowa 10<br>00-001 Warszawa</li>
+      </ul>
+    </div>
+
+    <div class="contact-form-side">
+      <h2>Napisz do nas</h2>
+      <form class="contact-form-light" onsubmit="event.preventDefault(); alert('Dziękujemy! Wiadomość została wysłana.');">
+        <input type="text" placeholder="Twoje imię i nazwisko" required>
+        <input type="email" placeholder="Twój adres e-mail" required>
+        
+        <select required>
+          <option value="" disabled selected>Wybierz temat rozmowy</option>
+          <option value="zlecenie">Zlecenie fotograficzne</option>
+          <option value="licencja">Zakup licencji na zdjęcie</option>
+          <option value="prasa">Akredytacje / Prasa</option>
+          <option value="inne">Inne</option>
+        </select>
+        
+        <textarea placeholder="Opowiedz nam o swoim projekcie..." required></textarea>
+        
+        <button type="submit" class="btn-red">Wyślij wiadomość</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+      <div class="footer-socials">
+        <a href="#"><img src="elementy_graf/x.png" alt="X"></a>
+        <a href="#"><img src="elementy_graf/fb.png" alt="FB"></a>
+        <a href="#"><img src="elementy_graf/ig.png" alt="IG"></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Nasza agencja</h4>
+      <a href="o-nas.html">O nas</a>
+      <a href="#">Kariera</a>
+      <a href="#">Kontakt dla prasy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Produkty</h4>
+      <a href="#">Zdjęcia Editorial</a>
+      <a href="#">Pakiety dla klubów</a>
+      <a href="#">Sprzedaj swoje zdjęcia</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Prawo</h4>
+      <a href="#">Regulamin serwisu</a>
+      <a href="#">Polityka prywatności</a>
+      <a href="#">Rodzaje licencji</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+  </div>
+</footer>
+
+<script>
+  let isLoggedIn = false; 
+  function toggleLogin() {
+    const btn = document.getElementById('loginBtn');
+    if (!isLoggedIn) {
+      isLoggedIn = true;
+      btn.innerText = "Wyloguj się";
+      btn.style.background = "#4CAF50"; 
+      btn.style.color = "white";
+      alert("Zalogowano pomyślnie!");
+    } else {
+      isLoggedIn = false;
+      btn.innerText = "Zaloguj się";
+      btn.style.background = "white";
+      btn.style.color = "black";
+      alert("Wylogowano.");
+    }
+  }
+
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
