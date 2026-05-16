@@ -397,7 +397,7 @@ header {
 
 
 /* =========================================
-   11. ZAKŁADKA "KONTAKT"
+   11. ZAKŁADKA "KONTAKT" (DZIELONY EKRAN)
    ========================================= */
 .contact-page-section {
   padding: 160px 20px 100px;
@@ -415,7 +415,6 @@ header {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Lewa strona - ciemna */
 .contact-info-side {
   flex: 1;
   padding: 80px 60px;
@@ -432,9 +431,8 @@ header {
 .contact-details li { margin-bottom: 25px; font-size: 16px; color: #ddd; display: flex; flex-direction: column; }
 .contact-details li span { font-size: 12px; text-transform: uppercase; color: #ff3344; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; }
 
-/* Prawa strona - jasna, formularz */
 .contact-form-side {
-  flex: 1.2; /* Troszkę szersza dla wygody wypełniania */
+  flex: 1.2;
   padding: 80px 60px;
   background: #ffffff;
   color: #000;
@@ -459,18 +457,28 @@ header {
   outline: none;
   border-color: #ff3344;
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(255,51,68,0.1); /* Lekka czerwona poświata przy kliknięciu */
+  box-shadow: 0 0 0 4px rgba(255,51,68,0.1);
 }
 
 .contact-form-light textarea { resize: vertical; min-height: 160px; }
 
 .contact-form-light button {
   margin-top: 10px;
-  align-self: flex-start; /* Guzik wyrównany do lewej */
+  align-self: flex-start;
   padding: 16px 40px;
+  background: #ff3344;
+  color: white;
+  border-radius: 30px; 
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Responsywność dla kontaktu */
+.contact-form-light button:hover { background: #d92635; transform: translateY(-2px); }
+
 @media(max-width: 900px) {
   .contact-split-layout { flex-direction: column; }
   .contact-info-side, .contact-form-side { padding: 50px 30px; }
