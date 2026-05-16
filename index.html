@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPSPRESS | Agencja Fotografii</title>
+  <title>IPSPRESS | Photography Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,39 +22,29 @@
 
 <header>
   <nav class="nav-links">
-    <a href="index.html">Strona główna</a>
-    <a href="zdjecia.html">Zdjęcia</a>
-    <a href="kategorie.html" style="color: #ff3344;">Kategorie</a>
-    <a href="o-nas.html">O nas</a>
-    <a href="kontakt.html">Kontakt</a>
+    <a href="index.html">Home</a>
+    <a href="zdjecia.html">Photos</a>
+    <a href="kategorie.html" style="color: #ff3344;">Categories</a>
+    <a href="o-nas.html">About Us</a>
+    <a href="kontakt.html">Contact</a>
   </nav>
-
 
   <a href="index.html" class="logo">IPSPRESS</a>
 
   <div class="header-actions">
-    <div class="lang-dropdown">
-      <button class="lang-btn">Polski <span>▼</span></button>
-      <div class="lang-menu">
-        <a href="#">Polski</a>
-        <a href="#">English</a>
-        <a href="#">Español</a>
-        <a href="#">Français</a>
-      </div>
-    </div>
-    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Zaloguj się</button>
+    <button class="btn-login" id="loginBtn" onclick="toggleLogin()">Log In</button>
   </div>
 </header>
 
 <section class="welcome-section">
   <div class="typing-container">
-    <h1 class="typing-main">Cześć!</h1>
-    <h2 class="typing-sub">Dobrze Cię widzieć!</h2>
+    <h1 class="typing-main">Welcome!</h1>
+    <h2 class="typing-sub">Great to see you!</h2>
   </div>
   
   <div class="search-wrapper">
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Szukaj obrazów">
+      <input type="text" id="searchInput" placeholder="Search images">
       <button class="search-btn" onclick="handleSearch()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
@@ -62,26 +52,26 @@
         </svg>
       </button>
     </div>
-    <div id="searchMessage" class="search-message">Musisz się zalogować, aby wyszukiwać!</div>
+    <div id="searchMessage" class="search-message">You must be logged in to search!</div>
   </div>
 </section>
 
 <section class="light-section">
   <div class="promo-container">
     <div class="promo-image">
-      <img src="foto/glowna/main4.jpg" alt="Praca fotografa">
+      <img src="foto/glowna/main4.jpg" alt="Photographer at work">
     </div>
     <div class="promo-text">
-      <h2>Twoja profesjonalna agencja fotograficzna</h2>
-      <p>Niezależnie od tego, czy potrzebujesz zdjęć z Finału Ligi Mistrzów, kameralnego turnieju tenisowego, czy wydarzenia motorsportowego – jesteśmy tam dla Ciebie. Posiadamy kadrę na każdy typ wydarzenia sportowego i biznesowego. Przekuj naszą kreatywność i sprzęt najwyższej klasy w przychody swojej firmy.</p>
-      <a href="mailto:kontakt@twojadomena.pl" class="btn-red">Skontaktuj się z nami</a>
+      <h2>Your Premium Photography Agency</h2>
+      <p>Whether you need coverage of the Champions League Final, an intimate tennis tournament, or a motorsport event – we are there for you. We provide expert staff for any type of sports and corporate event. Turn our creativity and top-tier equipment into revenue for your business.</p>
+      <a href="mailto:kontakt@ipspress.pl" class="btn-red">Contact Us</a>
     </div>
   </div>
 </section>
 
 <section class="light-section">
   <div class="slider-container">
-    <h3>Zaufały nam największe firmy na świecie</h3>
+    <h3>Trusted by the world's biggest brands</h3>
     <div class="slider-overflow">
       <div class="slider-track">
         <div class="slide-logo">UEFA</div><div class="slide-logo">FIFA</div><div class="slide-logo">Red Bull</div>
@@ -101,26 +91,26 @@
 
 <section class="photo-wall-section">
   <div class="photo-wall-grid">
-    <img src="foto/glowna/main1.jpg" alt="Foto"><img src="foto/glowna/main2.jpg" alt="Foto">
-    <img src="foto/glowna/main3.jpg" alt="Foto"><img src="foto/glowna/main1.jpg" alt="Foto">
-    <img src="foto/glowna/main2.jpg" alt="Foto"><img src="foto/glowna/main3.jpg" alt="Foto">
-    <img src="foto/glowna/main1.jpg" alt="Foto"><img src="foto/glowna/main2.jpg" alt="Foto">
+    <img src="foto/glowna/main1.jpg" alt="Photo"><img src="foto/glowna/main2.jpg" alt="Photo">
+    <img src="foto/glowna/main3.jpg" alt="Photo"><img src="foto/glowna/main1.jpg" alt="Photo">
+    <img src="foto/glowna/main2.jpg" alt="Photo"><img src="foto/glowna/main3.jpg" alt="Photo">
+    <img src="foto/glowna/main1.jpg" alt="Photo"><img src="foto/glowna/main2.jpg" alt="Photo">
     
-    <img src="foto/glowna/main3.jpg" alt="Foto"><img src="foto/glowna/main1.jpg" alt="Foto">
-    <img src="foto/glowna/main2.jpg" alt="Foto"><img src="foto/glowna/main3.jpg" alt="Foto">
-    <img src="foto/glowna/main1.jpg" alt="Foto"><img src="foto/glowna/main2.jpg" alt="Foto">
-    <img src="foto/glowna/main3.jpg" alt="Foto"><img src="foto/glowna/main1.jpg" alt="Foto">
+    <img src="foto/glowna/main3.jpg" alt="Photo"><img src="foto/glowna/main1.jpg" alt="Photo">
+    <img src="foto/glowna/main2.jpg" alt="Photo"><img src="foto/glowna/main3.jpg" alt="Photo">
+    <img src="foto/glowna/main1.jpg" alt="Photo"><img src="foto/glowna/main2.jpg" alt="Photo">
+    <img src="foto/glowna/main3.jpg" alt="Photo"><img src="foto/glowna/main1.jpg" alt="Photo">
     
-    <img src="foto/glowna/main2.jpg" alt="Foto"><img src="foto/glowna/main3.jpg" alt="Foto">
-    <img src="foto/glowna/main1.jpg" alt="Foto"><img src="foto/glowna/main2.jpg" alt="Foto">
-    <img src="foto/glowna/main3.jpg" alt="Foto"><img src="foto/glowna/main1.jpg" alt="Foto">
-    <img src="foto/glowna/main2.jpg" alt="Foto"><img src="foto/glowna/main3.jpg" alt="Foto">
+    <img src="foto/glowna/main2.jpg" alt="Photo"><img src="foto/glowna/main3.jpg" alt="Photo">
+    <img src="foto/glowna/main1.jpg" alt="Photo"><img src="foto/glowna/main2.jpg" alt="Photo">
+    <img src="foto/glowna/main3.jpg" alt="Photo"><img src="foto/glowna/main1.jpg" alt="Photo">
+    <img src="foto/glowna/main2.jpg" alt="Photo"><img src="foto/glowna/main3.jpg" alt="Photo">
   </div>
   
   <div class="photo-wall-overlay">
-    <h2>Tysiące zatrzymanych w kadrze emocji</h2>
-    <p>Byliśmy w centrum setek najważniejszych wydarzeń sportowych. Pozwól naszej agencji opowiedzieć historię również Twojego wydarzenia.</p>
-    <a href="mailto:kontakt@twojadomena.pl" class="btn-red">Napisz do nas</a>
+    <h2>Thousands of Emotions Captured in a Frame</h2>
+    <p>We have been at the center of hundreds of major sports events. Let our agency tell the story of your event as well.</p>
+    <a href="mailto:kontakt@ipspress.pl" class="btn-red">Message Us</a>
   </div>
 </section>
   
@@ -136,35 +126,35 @@
     </div>
     
     <div class="footer-col">
-      <h4>Nasza agencja</h4>
-      <a href="#">O nas</a>
-      <a href="#">Kariera</a>
-      <a href="#">Kontakt dla prasy</a>
+      <h4>Our Agency</h4>
+      <a href="o-nas.html">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Contact</a>
     </div>
 
     <div class="footer-col">
-      <h4>Produkty</h4>
-      <a href="#">Zdjęcia Editorial</a>
-      <a href="#">Pakiety dla klubów</a>
-      <a href="#">Wideo sportowe</a>
-      <a href="#">Sprzedaj swoje zdjęcia</a>
+      <h4>Products</h4>
+      <a href="#">Editorial Photos</a>
+      <a href="#">Club Packages</a>
+      <a href="#">Sports Video</a>
+      <a href="#">Sell Your Photos</a>
     </div>
 
     <div class="footer-col">
-      <h4>Prawo</h4>
-      <a href="#">Regulamin serwisu</a>
-      <a href="#">Polityka prywatności</a>
-      <a href="#">Rodzaje licencji</a>
+      <h4>Legal</h4>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">License Types</a>
     </div>
   </div>
   
   <div class="footer-bottom">
-    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+    <p>All photographs are the property of the author. Copying without permission is prohibited. © 2026 IPS PRESS</p>
   </div>
 </footer>
 
 <script>
-  // TUTAJ JEST SKRYPT OD ZMIANY ZDJĘĆ CO 10 SEKUND
+  // ZMIANA ZDJĘĆ CO 5 SEKUND
   const slides = document.querySelectorAll('.bg-slide');
   let currentSlide = 0;
 
@@ -173,7 +163,7 @@
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
-    }, 5000); // 10000 ms = 10 sekund
+    }, 5000); 
   }
 
   // LOGIKA LOGOWANIA
@@ -182,17 +172,17 @@
     const btn = document.getElementById('loginBtn');
     if (!isLoggedIn) {
       isLoggedIn = true;
-      btn.innerText = "Wyloguj się";
+      btn.innerText = "Log Out";
       btn.style.background = "#4CAF50"; 
       btn.style.color = "white";
       document.getElementById('searchMessage').style.display = "none";
-      alert("Zalogowano pomyślnie! Wyszukiwarka odblokowana.");
+      alert("Logged in successfully! Search feature unlocked.");
     } else {
       isLoggedIn = false;
-      btn.innerText = "Zaloguj się";
+      btn.innerText = "Log In";
       btn.style.background = "white";
       btn.style.color = "black";
-      alert("Wylogowano.");
+      alert("Logged out.");
     }
   }
 
@@ -202,17 +192,17 @@
     const input = document.getElementById('searchInput').value;
     
     if (!isLoggedIn) {
-      msg.innerText = "Musisz się zalogować, aby wyszukiwać materiały!";
+      msg.innerText = "You must be logged in to search for materials!";
       msg.style.color = "#ff4444";
       msg.style.display = "block";
       setTimeout(() => { msg.style.display = "none"; }, 3000);
     } else if (input.trim() === "") {
-      msg.innerText = "Wpisz frazę do wyszukania!";
+      msg.innerText = "Enter a search term!";
       msg.style.color = "#ffcc00"; 
       msg.style.display = "block";
       setTimeout(() => { msg.style.display = "none"; }, 3000);
     } else {
-      alert("Trwa wyszukiwanie zdjęć dla frazy: " + input);
+      alert("Searching images for: " + input);
     }
   }
 </script>
