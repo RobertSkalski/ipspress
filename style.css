@@ -155,26 +155,6 @@ header {
 }
 .btn-red:hover { background: #d92635; transform: translateY(-2px); }
 
-/* Sekcja Możliwości (4 kafelki) */
-.features-container { max-width: 1200px; margin: 0 auto; }
-.features-container h2 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.feature-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.feature-card img { width: 60px; height: 60px; border-radius: 6px; object-fit: cover; }
-.feature-card span { font-size: 14px; font-weight: 600; line-height: 1.4; }
-
 /* Sekcja Karuzeli Logo */
 .slider-container { max-width: 1200px; margin: 0 auto; text-align: center; }
 .slider-container h3 { font-size: 24px; font-weight: 600; margin-bottom: 40px; color: #333; }
