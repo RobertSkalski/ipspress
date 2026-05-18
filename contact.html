@@ -42,11 +42,11 @@
 
     <div class="contact-form-side">
       <h2>Drop Us a Line</h2>
-      <form class="contact-form-light" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
-        <input type="text" placeholder="Your full name" required>
-        <input type="email" placeholder="Your email address" required>
+      <form id="contactForm" class="contact-form-light" method="POST">
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="email" name="email" placeholder="Your email address" required>
         
-        <select required>
+        <select name="subject" required>
           <option value="" disabled selected>Select a subject</option>
           <option value="assignment">Photography Assignment</option>
           <option value="licensing">License Purchase Inquiry</option>
@@ -54,9 +54,12 @@
           <option value="other">Other Inquiry</option>
         </select>
         
-        <textarea placeholder="Tell us more about your project or event..." required></textarea>
+        <textarea name="message" placeholder="Tell us more about your project or event..." required></textarea>
         
-        <button type="submit" class="btn-red">Send Message</button>
+        <button type="submit" id="submitBtn" class="btn-red">Send Message</button>
+        
+        <div id="formSuccess" style="display:none; color:#4CAF50; font-weight:600; margin-top:15px; font-size:14px;">✅ Thank you! Your message has been sent successfully.</div>
+        <div id="formError" style="display:none; color:#ff3344; font-weight:600; margin-top:15px; font-size:14px;">❌ Something went wrong. Please try again or email us directly.</div>
       </form>
     </div>
 
@@ -98,7 +101,45 @@
 </footer>
 
 <script>
-  // Zabezpieczenie przed kopiowaniem i zapisywaniem zdjęć
+  // Obsługa wysyłania formularza przez API do pliku PHP
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const btn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+    const formData = new FormData(this);
+    
+    // Wizualna zmiana stanu przycisku
+    btn.innerText = 'Sending...';
+    btn.disabled = true;
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    // Wysyłamy dane do skryptu obsługującego
+    fetch('send-email.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.status === 'success') {
+        successMsg.style.display = 'block';
+        this.reset(); // Czyszczenie pól formularza
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(() => {
+      errorMsg.style.display = 'block';
+    })
+    .finally(() => {
+      btn.innerText = 'Send Message';
+      btn.disabled = false;
+    });
+  });
+
+  // ANTI-THEFT CONTEXT LOCK
   document.querySelectorAll('img').forEach(img => {
     img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     img.addEventListener('dragstart', function(e) { e.preventDefault(); });
