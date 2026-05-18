@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Photos | IPSPRESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="/">Home</a> <a href="logowanie">Photos</a> <a href="kategorie">Categories</a> <a href="o-nas">About Us</a> <a href="kontakt">Contact</a>
+  </nav>
+  <a href="/" class="logo">IPSPRESS</a>
+  <div class="header-actions"><a href="logowanie" class="btn-login">Log In</a></div>
+</header>
+
+<section style="padding: 180px 20px 100px; background: #000; min-height: 85vh; display: flex; justify-content: center; align-items: flex-start;">
+  <div style="max-width: 750px; width: 100%; background: #0a0a0a; padding: 60px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: left;">
+    <h1 style="font-size: 38px; margin-bottom: 20px; font-weight: 800; color: #fff;">Sell Your Photos</h1>
+    <p style="color: #aaa; line-height: 1.8; margin-bottom: 25px; font-size: 15px;">Are you an accredited, professional sports photographer? Distribute your images worldwide via the IPSPRESS global network. We offer top-tier revenue splits, syndication management, and active legal theft protection.</p>
+    
+    <div id="applyBox" style="background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222; margin: 35px 0;">
+      <h3 style="font-size: 18px; color: #fff; margin-bottom: 15px; font-weight: 700;">Quick Contributor Check</h3>
+      <form onsubmit="submitApp(event)">
+        <div style="margin-bottom: 15px;">
+          <input type="text" placeholder="Portfolio Link (e.g., Behance, Website)" required style="width:100%; padding:12px; background:#1a1a1a; border:1px solid #333; color:#fff; border-radius:6px; font-family:inherit;">
+        </div>
+        <button type="submit" style="width:100%; background:#ff3344; color:#fff; border:none; padding:12px; border-radius:30px; font-weight:600; cursor:pointer; font-family:inherit;">Submit Portfolio for Review</button>
+      </form>
+    </div>
+    
+    <div id="successBox" style="display:none; background:rgba(76, 175, 80, 0.1); border:1px solid #4CAF50; color:#4CAF50; padding:20px; border-radius:8px; margin:35px 0; text-align:center; font-weight:600; font-size:14px;">
+      ✅ Application registered! Our curation team will review your portfolio and reach back via e-mail within 48 hours.
+    </div>
+
+    <h3 style="font-size: 22px; margin-bottom: 15px; color: #fff; font-weight: 700;">Global Syndication</h3>
+    <p style="color: #aaa; line-height: 1.8; margin-bottom: 20px; font-size: 15px;">Get your work pushed automatically to news editorial desks globally. You retain ownership; we handle the seamless international distribution.</p>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand"><h2>IPSPRESS</h2></div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="editorial-photos">Editorial Photos</a> <a href="club-packages">Club Packages</a> <a href="sports-video">Sports Video</a> <a href="sell-your-photos">Sell Your Photos</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Agency</h4>
+      <a href="o-nas">About Us</a> <a href="careers">Careers</a> <a href="press-contact">Press Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Terms of Service</a> <a href="#">Privacy Policy</a> <a href="#">Licensing</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 IPS PRESS. All rights reserved.</p></div>
+</footer>
+
+<script>
+  function submitApp(e) {
+    e.preventDefault();
+    document.getElementById('applyBox').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  }
+</script>
+</body>
+</html>
