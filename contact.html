@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | IPSPRESS</title>
+  <link rel="icon" type="image/png" href="foto/glowna/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="login">Photos</a>
+    <a href="categories">Categories</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
+  </nav>
+
+  <a href="/" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <a href="login" class="btn-login">Log In</a>
+  </div>
+</header>
+
+<section class="contact-page-section">
+  <div class="contact-split-layout">
+    
+    <div class="contact-info-side">
+      <h2>Let's connect.<br>Get in touch.</h2>
+      <p>Have questions regarding licensing, need a photographer booked for an upcoming event, or want to join our creative network? We are available for you 24/7.</p>
+      
+      <ul class="contact-details">
+        <li><span>Editorial Email</span> news@ipspress.com</li>
+      </ul>
+    </div>
+
+    <div class="contact-form-side">
+      <h2>Drop Us a Line</h2>
+      <form class="contact-form-light" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+        <input type="text" placeholder="Your full name" required>
+        <input type="email" placeholder="Your email address" required>
+        
+        <select required>
+          <option value="" disabled selected>Select a subject</option>
+          <option value="assignment">Photography Assignment</option>
+          <option value="licensing">License Purchase Inquiry</option>
+          <option value="press">Press & Media Accreditation</option>
+          <option value="other">Other Inquiry</option>
+        </select>
+        
+        <textarea placeholder="Tell us more about your project or event..." required></textarea>
+        
+        <button type="submit" class="btn-red">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Our Agency</h4>
+      <a href="about-us">About Us</a>
+      <a href="careers">Careers</a>
+      <a href="press-contact">Press Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="editorial-photos">Editorial Photos</a>
+      <a href="club-packages">Club Packages</a>
+      <a href="sports-video">Sports Video</a>
+      <a href="sell-your-photos">Sell Your Photos</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="licensing">Licensing</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>All photographs are the property of the author. Copying without permission is prohibited. © 2026 IPS PRESS</p>
+  </div>
+</footer>
+
+<script>
+  // Zabezpieczenie przed kopiowaniem i zapisywaniem zdjęć
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
