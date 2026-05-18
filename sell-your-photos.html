@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sell Your Photos | IPSPRESS</title>
+  <title>Sell Your Photos | IPSPRESS Contributor Portal</title>
+  <link rel="icon" type="image/png" href="foto/glowna/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,53 +14,94 @@
 
 <header>
   <nav class="nav-links">
-    <a href="/">Home</a> <a href="logowanie">Photos</a> <a href="kategorie">Categories</a> <a href="o-nas">About Us</a> <a href="kontakt">Contact</a>
+    <a href="/">Home</a>
+    <a href="login">Photos</a>
+    <a href="categories">Categories</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
   </nav>
   <a href="/" class="logo">IPSPRESS</a>
-  <div class="header-actions"><a href="logowanie" class="btn-login">Log In</a></div>
+  <div class="header-actions">
+    <a href="login" class="btn-login">Log In</a>
+  </div>
 </header>
 
 <section style="padding: 180px 20px 100px; background: #000; min-height: 85vh; display: flex; justify-content: center; align-items: flex-start;">
-  <div style="max-width: 750px; width: 100%; background: #0a0a0a; padding: 60px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: left;">
-    <h1 style="font-size: 38px; margin-bottom: 20px; font-weight: 800; color: #fff;">Sell Your Photos</h1>
-    <p style="color: #aaa; line-height: 1.8; margin-bottom: 25px; font-size: 15px;">Are you an accredited, professional sports photographer? Distribute your images worldwide via the IPSPRESS global network. We offer top-tier revenue splits, syndication management, and active legal theft protection.</p>
+  <div style="max-width: 750px; width: 100%; background: #0a0a0a; padding: 60px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: left; font-family: 'Montserrat', sans-serif;">
+    <span style="font-size: 11px; text-transform: uppercase; color: #ff3344; font-weight: 700; letter-spacing: 1px;">Contributor Portal</span>
+    <h1 style="font-size: 38px; margin-top: 5px; margin-bottom: 20px; font-weight: 800; color: #fff;">Sell Your Photos</h1>
+    <p style="color: #aaa; line-height: 1.8; margin-bottom: 25px; font-size: 15px;">Are you an accredited, professional sports photographer? Distribute your high-resolution editorial imagery worldwide via the IPSPRESS global syndication network. We offer industry-leading revenue splits, full copyright management, and proactive digital property protection.</p>
     
+    <h3 style="font-size: 22px; margin-top: 35px; margin-bottom: 20px; color: #fff; font-weight: 700;">Why Partner With Us?</h3>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 35px;">
+      <div style="background: #111; padding: 20px; border-radius: 6px; border-left: 3px solid #ff3344;">
+        <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">Premium Commission Splits</h4>
+        <p style="color: #888; margin: 0; font-size: 14px; line-height: 1.5;">Keep up to 60% of every direct license purchase. Crystalline monthly payouts with detailed usage logs.</p>
+      </div>
+      <div style="background: #111; padding: 20px; border-radius: 6px; border-left: 3px solid #ff3344;">
+        <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">Global Media Syndication</h4>
+        <p style="color: #888; margin: 0; font-size: 14px; line-height: 1.5;">Your uploads are instantly indexed and pushed straight to major news outlets, editorial desks, and sports networks globally.</p>
+      </div>
+      <div style="background: #111; padding: 20px; border-radius: 6px; border-left: 3px solid #ff3344;">
+        <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 16px; font-weight: 600;">Advanced Asset Encryption</h4>
+        <p style="color: #888; margin: 0; font-size: 14px; line-height: 1.5;">We protect your digital rights using rigid hotlinking security blocks and context-menu disables to prevent unauthorized layout scraping.</p>
+      </div>
+    </div>
+
     <div id="applyBox" style="background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222; margin: 35px 0;">
-      <h3 style="font-size: 18px; color: #fff; margin-bottom: 15px; font-weight: 700;">Quick Contributor Check</h3>
+      <h3 style="font-size: 18px; color: #fff; margin-bottom: 15px; font-weight: 700;">Apply for Contributor Review</h3>
       <form onsubmit="submitApp(event)">
         <div style="margin-bottom: 15px;">
-          <input type="text" placeholder="Portfolio Link (e.g., Behance, Website)" required style="width:100%; padding:12px; background:#1a1a1a; border:1px solid #333; color:#fff; border-radius:6px; font-family:inherit;">
+          <input type="url" placeholder="Portfolio Link (e.g., Personal Website, Behance, Adobe Portfolio)" required style="width:100%; padding:12px; background:#1a1a1a; border:1px solid #333; color:#fff; border-radius:6px; font-family:inherit; box-sizing: border-box;">
         </div>
-        <button type="submit" style="width:100%; background:#ff3344; color:#fff; border:none; padding:12px; border-radius:30px; font-weight:600; cursor:pointer; font-family:inherit;">Submit Portfolio for Review</button>
+        <button type="submit" style="width:100%; background:#ff3344; color:#fff; border:none; padding:12px; border-radius:30px; font-weight:600; cursor:pointer; font-family:inherit; transition: background 0.2s;">Submit Application</button>
       </form>
     </div>
     
-    <div id="successBox" style="display:none; background:rgba(76, 175, 80, 0.1); border:1px solid #4CAF50; color:#4CAF50; padding:20px; border-radius:8px; margin:35px 0; text-align:center; font-weight:600; font-size:14px;">
-      ✅ Application registered! Our curation team will review your portfolio and reach back via e-mail within 48 hours.
+    <div id="successBox" style="display:none; background:rgba(76, 175, 80, 0.1); border:1px solid #4CAF50; color:#4CAF50; padding:20px; border-radius:8px; margin:35px 0; text-align:center; font-weight:600; font-size:14px; line-height: 1.5;">
+      ✅ Application registered! Our curation desk will review your submission and reach back via email within 48 hours.
     </div>
 
-    <h3 style="font-size: 22px; margin-bottom: 15px; color: #fff; font-weight: 700;">Global Syndication</h3>
-    <p style="color: #aaa; line-height: 1.8; margin-bottom: 20px; font-size: 15px;">Get your work pushed automatically to news editorial desks globally. You retain ownership; we handle the seamless international distribution.</p>
+    <h3 style="margin-top: 40px; margin-bottom: 15px; color: #fff; font-weight: 700;">Submission Guidelines</h3>
+    <p style="color: #aaa; line-height: 1.8; margin-bottom: 15px; font-size: 15px;">To maintain our reputation as a premier sports press repository, we uphold strict aesthetic and technical criteria:</p>
+    <ul style="color: #aaa; line-height: 1.8; margin-bottom: 20px; font-size: 15px; padding-left: 20px;">
+      <li>Assets must be uploaded in uncompressed JPEG format with full embedded IPTC metadata (captions, event dates, credits).</li>
+      <li>Minimum capture resolution of 12 Megapixels. Crisp focus and professional exposure balance are non-negotiable.</li>
+      <li>Absolutely no post-process watermarks, signatures, or severe artificial graphic transformations on editorial content.</li>
+    </ul>
+    
+    <p style="color: #aaa; font-size: 15px; margin-top: 25px;">For comprehensive licensing syndication questions, direct your inquiries to: <a href="mailto:news@ipspress.com" style="color: #ff3344; text-decoration: none; font-weight: 600;">news@ipspress.com</a></p>
   </div>
 </section>
 
 <footer class="main-footer">
   <div class="footer-grid">
-    <div class="footer-brand"><h2>IPSPRESS</h2></div>
-    <div class="footer-col">
-      <h4>Products</h4>
-      <a href="editorial-photos">Editorial Photos</a> <a href="club-packages">Club Packages</a> <a href="sports-video">Sports Video</a> <a href="sell-your-photos">Sell Your Photos</a>
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
     </div>
     <div class="footer-col">
       <h4>Our Agency</h4>
-      <a href="o-nas">About Us</a> <a href="careers">Careers</a> <a href="press-contact">Press Contact</a>
+      <a href="about-us">About Us</a>
+      <a href="careers">Careers</a>
+      <a href="press-contact">Press Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="editorial-photos">Editorial Photos</a>
+      <a href="club-packages">Club Packages</a>
+      <a href="sports-video">Sports Video</a>
+      <a href="sell-your-photos">Sell Your Photos</a>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
-      <a href="#">Terms of Service</a> <a href="#">Privacy Policy</a> <a href="#">Licensing</a>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="licensing">Licensing</a>
     </div>
   </div>
-  <div class="footer-bottom"><p>© 2026 IPS PRESS. All rights reserved.</p></div>
+  <div class="footer-bottom">
+    <p>All photographs are the property of the author. Copying without permission is prohibited. © 2026 IPS PRESS</p>
+  </div>
 </footer>
 
 <script>
@@ -68,6 +110,12 @@
     document.getElementById('applyBox').style.display = 'none';
     document.getElementById('successBox').style.display = 'block';
   }
+
+  // ANTI-THEFT CONTEXT LOCK
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
 </script>
 </body>
 </html>
