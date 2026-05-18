@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | IPSPRESS</title>
+  <link rel="icon" type="image/png" href="foto/glowna/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="login">Photos</a> 
+    <a href="categories">Categories</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
+  </nav>
+  <a href="/" class="logo">IPSPRESS</a>
+  <div class="header-actions">
+    <a href="login" class="btn-login">Log In</a>
+  </div>
+</header>
+
+<section class="login-page-section">
+  <div class="login-container">
+    <h2>Sign In</h2>
+    <p class="login-subtitle">Access your premium materials and licenses.</p>
+
+    <form id="mainLoginForm" class="login-form" onsubmit="handleLogin(event)">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      
+      <div class="login-actions">
+        <label class="remember-me">
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#" class="forgot-pass" onclick="toggleForgotPass(event)">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn-red login-submit-btn">Log In</button>
+    </form>
+
+    <div id="forgotPassSection" class="forgot-pass-section" style="display: none;">
+      <h3>Reset Your Password</h3>
+      <p>Enter your email address and we will send you a link to reset your password.</p>
+      
+      <form id="resetForm" class="login-form" onsubmit="handleReset(event)">
+        <div class="input-group">
+          <label for="resetEmail">Email Address</label>
+          <input type="email" id="resetEmail" placeholder="name@example.com" required>
+        </div>
+        <button type="submit" class="btn-red login-submit-btn">Send Reset Link</button>
+        <button type="button" class="btn-back" onclick="toggleForgotPass(event)">Back to Login</button>
+      </form>
+      
+      <div id="resetSuccessMessage" class="reset-success">
+        ✅ Recovery link has been sent to your email! Please check your inbox.
+      </div>
+      <button type="button" id="backAfterResetBtn" class="btn-back" style="display:none; margin-top:15px;" onclick="toggleForgotPass(event)">Back to Login</button>
+    </div>
+
+    <div class="register-prompt">
+      Don't have an account? <a href="mailto:news@ipspress.com">Request access</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleLogin(e) {
+    e.preventDefault();
+    alert("Invalid username or password.");
+  }
+
+  function toggleForgotPass(e) {
+    e.preventDefault();
+    const loginForm = document.getElementById('mainLoginForm');
+    const forgotSection = document.getElementById('forgotPassSection');
+    const resetMsg = document.getElementById('resetSuccessMessage');
+    const resetForm = document.getElementById('resetForm');
+    const backBtn = document.getElementById('backAfterResetBtn');
+    const title = document.querySelector('.login-container h2');
+    const subtitle = document.querySelector('.login-subtitle');
+    
+    if (forgotSection.style.display === 'block') {
+      forgotSection.style.display = 'none';
+      loginForm.style.display = 'flex';
+      title.style.display = 'block';
+      subtitle.style.display = 'block';
+      
+      resetForm.style.display = 'flex';
+      resetMsg.style.display = 'none';
+      backBtn.style.display = 'none';
+      document.getElementById('resetEmail').value = '';
+    } 
+    else {
+      loginForm.style.display = 'none';
+      title.style.display = 'none';
+      subtitle.style.display = 'none';
+      forgotSection.style.display = 'block';
+    }
+  }
+
+  function handleReset(e) {
+    e.preventDefault();
+    const resetForm = document.getElementById('resetForm');
+    const resetMsg = document.getElementById('resetSuccessMessage');
+    const backBtn = document.getElementById('backAfterResetBtn');
+    
+    resetForm.style.display = 'none';
+    resetMsg.style.display = 'block';
+    backBtn.style.display = 'block';
+  }
+
+  // ANTI-THEFT CONTEXT LOCK
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
