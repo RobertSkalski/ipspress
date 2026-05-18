@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers | IPSPRESS</title>
+  <link rel="icon" type="image/png" href="foto/glowna/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,14 +15,14 @@
 <header>
   <nav class="nav-links">
     <a href="/">Home</a>
-    <a href="logowanie">Photos</a>
-    <a href="kategorie">Categories</a>
-    <a href="o-nas">About Us</a>
-    <a href="kontakt">Contact</a>
+    <a href="login">Photos</a>
+    <a href="categories">Categories</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
   </nav>
   <a href="/" class="logo">IPSPRESS</a>
   <div class="header-actions">
-    <a href="logowanie" class="btn-login">Log In</a>
+    <a href="login" class="btn-login">Log In</a>
   </div>
 </header>
 
@@ -47,6 +48,14 @@
     <div class="footer-brand">
       <h2>IPSPRESS</h2>
     </div>
+    
+    <div class="footer-col">
+      <h4>Our Agency</h4>
+      <a href="about-us">About Us</a>
+      <a href="careers">Careers</a>
+      <a href="press-contact">Press Contact</a>
+    </div>
+
     <div class="footer-col">
       <h4>Products</h4>
       <a href="editorial-photos">Editorial Photos</a>
@@ -54,23 +63,26 @@
       <a href="sports-video">Sports Video</a>
       <a href="sell-your-photos">Sell Your Photos</a>
     </div>
-    <div class="footer-col">
-      <h4>Our Agency</h4>
-      <a href="o-nas">About Us</a>
-      <a href="careers">Careers</a>
-      <a href="press-contact">Press Contact</a>
-    </div>
+
     <div class="footer-col">
       <h4>Legal</h4>
-      <a href="#">Terms of Service</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Licensing</a>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="licensing">Licensing</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 IPS PRESS. All rights reserved.</p>
+    <p>All photographs are the property of the author. Copying without permission is prohibited. © 2026 IPS PRESS</p>
   </div>
 </footer>
+
+<script>
+  // ANTI-THEFT CONTEXT LOCK
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
 
 </body>
 </html>
