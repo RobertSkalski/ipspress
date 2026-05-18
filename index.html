@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPSPRESS | Photography Agency</title>
+  <title>IPSPRESS | Sports & Editorial Photography Agency</title>
   <link rel="icon" type="image/png" href="foto/glowna/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,16 +24,16 @@
 <header>
   <nav class="nav-links">
     <a href="/">Home</a>
-    <a href="logowanie">Photos</a>
+    <a href="login">Photos</a>
     <a href="categories">Categories</a>
-    <a href="o-nas">About Us</a>
-    <a href="kontakt">Contact</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
   </nav>
 
   <a href="/" class="logo">IPSPRESS</a>
 
   <div class="header-actions">
-    <a href="logowanie" class="btn-login">Log In</a>
+    <a href="login" class="btn-login">Log In</a>
   </div>
 </header>
 
@@ -65,7 +65,7 @@
     <div class="promo-text">
       <h2>Your Personal Photography Agency</h2>
       <p>Whether you need coverage of the Champions League Final, an intimate tennis tournament, or a motorsport event - we are there for you. We provide expert staff for any type of sports and corporate event. Turn our creativity and top-tier equipment into revenue for your business.</p>
-      <a href="mailto:news@ipspress.com" class="btn-red">Contact Us</a>
+      <a href="mailto:news@ipspress.pl" class="btn-red">Contact Us</a>
     </div>
   </div>
 </section>
@@ -96,7 +96,7 @@
   <div class="photo-wall-overlay">
     <h2>Thousands of Emotions Captured in a Frame</h2>
     <p>We have been at the center of hundreds of major sports events. Let our agency tell the story of your event as well.</p>
-    <a href="mailto:news@ipspress.com" class="btn-red">Message Us</a>
+    <a href="mailto:news@ipspress.pl" class="btn-red">Message Us</a>
   </div>
 </section>
   
@@ -108,7 +108,7 @@
     
     <div class="footer-col">
       <h4>Our Agency</h4>
-      <a href="o-nas">About Us</a>
+      <a href="about-us">About Us</a>
       <a href="careers">Careers</a>
       <a href="press-contact">Press Contact</a>
     </div>
@@ -135,7 +135,7 @@
 </footer>
 
 <script>
-  // ZMIANA ZDJĘĆ CO 4 SEKUNDY
+  // BG SLIDESHOW INTERVAL
   const slides = document.querySelectorAll('.bg-slide');
   let currentSlide = 0;
 
@@ -147,7 +147,7 @@
     }, 4000); 
   }
 
-  // LOGIKA LOGOWANIA
+  // LOGIN INTERACTION LOGIC
   let isLoggedIn = false; 
   function toggleLogin() {
     const btn = document.getElementById('loginBtn');
@@ -167,7 +167,7 @@
     }
   }
 
-  // LOGIKA WYSZUKIWARKI
+  // SEARCH BOX ENGINE
   function handleSearch() {
     const msg = document.getElementById('searchMessage');
     const input = document.getElementById('searchInput').value;
@@ -186,6 +186,12 @@
       alert("Searching images for: " + input);
     }
   }
+
+  // ANTI-THEFT CONTEXT LOCK
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
 </script>
 
 </body>
