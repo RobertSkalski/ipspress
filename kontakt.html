@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt | IPSPRESS</title>
-  
+  <title>Contact | IPSPRESS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
 <header>
   <nav class="nav-links">
-    <a href="index.html">Strona główna</a>
-    <a href="zdjecia.html">Zdjęcia</a>
-    <a href="kategorie.html" style="color: #ff3344;">Kategorie</a>
-    <a href="o-nas.html">O nas</a>
-    <a href="kontakt.html">Kontakt</a>
+    <a href="/">Home</a>
+    <a href="logowanie">Photos</a>
+    <a href="categories">Categories</a>
+    <a href="o-nas">About Us</a>
+    <a href="kontakt">Contact</a>
   </nav>
 
-  <a href="index.html" class="logo">IPSPRESS</a>
+  <a href="/" class="logo">IPSPRESS</a>
 
   <div class="header-actions">
-    </div>
-    <a href="logowanie.html" class="btn-login">Log In</a>
+    <a href="logowanie" class="btn-login">Log In</a>
   </div>
 </header>
 
@@ -34,33 +31,31 @@
   <div class="contact-split-layout">
     
     <div class="contact-info-side">
-      <h2>Złapmy kadr.<br>I kontakt.</h2>
-      <p>Masz pytania dotyczące licencji, potrzebujesz fotografa na jutro, a może chcesz dołączyć do naszego zespołu? Jesteśmy do Twojej dyspozycji 24/7.</p>
+      <h2>Let's connect.<br>Get in touch.</h2>
+      <p>Have questions regarding licensing, need a photographer booked for an upcoming event, or want to join our creative network? We are available for you 24/7.</p>
       
       <ul class="contact-details">
-        <li><span>Email do redakcji</span> kontakt@ipspress.pl</li>
-        <li><span>Telefon (Biuro)</span> +48 123 456 789</li>
-        <li><span>Główna siedziba</span> ul. Sportowa 10<br>00-001 Warszawa</li>
+        <li><span>Editorial Email</span> news@ipspress.com</li>
       </ul>
     </div>
 
     <div class="contact-form-side">
-      <h2>Napisz do nas</h2>
-      <form class="contact-form-light" onsubmit="event.preventDefault(); alert('Dziękujemy! Wiadomość została wysłana.');">
-        <input type="text" placeholder="Twoje imię i nazwisko" required>
-        <input type="email" placeholder="Twój adres e-mail" required>
+      <h2>Drop Us a Line</h2>
+      <form class="contact-form-light" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+        <input type="text" placeholder="Your full name" required>
+        <input type="email" placeholder="Your email address" required>
         
         <select required>
-          <option value="" disabled selected>Wybierz temat rozmowy</option>
-          <option value="zlecenie">Zlecenie fotograficzne</option>
-          <option value="licencja">Zakup licencji na zdjęcie</option>
-          <option value="prasa">Akredytacje / Prasa</option>
-          <option value="inne">Inne</option>
+          <option value="" disabled selected>Select a subject</option>
+          <option value="assignment">Photography Assignment</option>
+          <option value="licensing">License Purchase Inquiry</option>
+          <option value="press">Press & Media Accreditation</option>
+          <option value="other">Other Inquiry</option>
         </select>
         
-        <textarea placeholder="Opowiedz nam o swoim projekcie..." required></textarea>
+        <textarea placeholder="Tell us more about your project or event..." required></textarea>
         
-        <button type="submit" class="btn-red">Wyślij wiadomość</button>
+        <button type="submit" class="btn-red">Send Message</button>
       </form>
     </div>
 
@@ -79,51 +74,35 @@
     </div>
     
     <div class="footer-col">
-      <h4>Nasza agencja</h4>
-      <a href="o-nas.html">O nas</a>
-      <a href="#">Kariera</a>
-      <a href="#">Kontakt dla prasy</a>
+      <h4>Our Agency</h4>
+      <a href="o-nas">About Us</a>
+      <a href="careers">Careers</a>
+      <a href="press-contact">Press Contact</a>
     </div>
 
     <div class="footer-col">
-      <h4>Produkty</h4>
-      <a href="#">Zdjęcia Editorial</a>
-      <a href="#">Pakiety dla klubów</a>
-      <a href="#">Sprzedaj swoje zdjęcia</a>
+      <h4>Products</h4>
+      <a href="editorial-photos">Editorial Photos</a>
+      <a href="club-packages">Club Packages</a>
+      <a href="sports-video">Sports Video</a>
+      <a href="sell-your-photos">Sell Your Photos</a>
     </div>
 
     <div class="footer-col">
-      <h4>Prawo</h4>
-      <a href="#">Regulamin serwisu</a>
-      <a href="#">Polityka prywatności</a>
-      <a href="#">Rodzaje licencji</a>
+      <h4>Legal</h4>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="licensing">Licensing</a>
     </div>
   </div>
   
   <div class="footer-bottom">
-    <p>Wszystkie fotografie stanowią własność autora. Kopiowanie bez zgody zabronione. © 2026 IPS PRESS</p>
+    <p>© 2026 IPS PRESS. All rights reserved. All photographs are copyrighted by their respective authors.</p>
   </div>
 </footer>
 
 <script>
-  let isLoggedIn = false; 
-  function toggleLogin() {
-    const btn = document.getElementById('loginBtn');
-    if (!isLoggedIn) {
-      isLoggedIn = true;
-      btn.innerText = "Wyloguj się";
-      btn.style.background = "#4CAF50"; 
-      btn.style.color = "white";
-      alert("Zalogowano pomyślnie!");
-    } else {
-      isLoggedIn = false;
-      btn.innerText = "Zaloguj się";
-      btn.style.background = "white";
-      btn.style.color = "black";
-      alert("Wylogowano.");
-    }
-  }
-
+  // Zabezpieczenie przed kopiowaniem i zapisywaniem zdjęć
   document.querySelectorAll('img').forEach(img => {
     img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     img.addEventListener('dragstart', function(e) { e.preventDefault(); });
