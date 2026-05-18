@@ -690,6 +690,72 @@ header {
 }
 
 
+
+
+
+/* =========================================
+   14. PROSTE PODSTRONY TEKSTOWE
+   ========================================= */
+.simple-page-section {
+  padding: 180px 20px 100px;
+  background: #000;
+  min-height: 85vh;
+  text-align: center;
+}
+
+.simple-page-container {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #0a0a0a;
+  padding: 60px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: left;
+}
+
+.simple-page-container h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.simple-page-container h3 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.simple-page-container p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.simple-page-container ul {
+  color: #aaa;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.simple-page-container a.mail-link {
+  color: #ff3344;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.simple-page-container a.mail-link:hover {
+  color: #fff;
+}
+
+
+
+
 /* =========================================
    10. RESPONSYWNOŚĆ
    ========================================= */
@@ -697,3 +763,5 @@ header {
   .photo-wall-grid { grid-template-columns: repeat(6, 1fr); }
 }
 /* ... i tutaj leci cała reszta Twoich reguł @media aż do końca pliku ... */
+
+
