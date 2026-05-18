@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | IPSPRESS</title>
+  <link rel="icon" type="image/png" href="foto/glowna/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="login">Photos</a>
+    <a href="categories">Categories</a>
+    <a href="about-us">About Us</a>
+    <a href="contact">Contact</a>
+  </nav>
+
+  <a href="/" class="logo">IPSPRESS</a>
+
+  <div class="header-actions">
+    <a href="login" class="btn-login">Log In</a>
+  </div>
+</header>
+
+<section class="about-hero">
+  <h1>We don't just take photos.<br><span class="red-text">We tell stories.</span></h1>
+  <p>We are a photography agency living at the very heart of sports and corporate emotions. Where others see only a fraction of a second, we capture a frame that makes history.</p>
+</section>
+
+<section class="stats-section">
+  <div class="stats-wrapper">
+    <div class="stat-box">
+      <h3>10+</h3>
+      <span>Years on the market</span>
+    </div>
+    <div class="stat-box">
+      <h3>500+</h3>
+      <span>Events covered</span>
+    </div>
+    <div class="stat-box">
+      <h3>1M+</h3>
+      <span>Frames captured</span>
+    </div>
+    <div class="stat-box">
+      <h3>24/7</h3>
+      <span>Ready for action</span>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-container">
+    <div class="story-image">
+      <img src="foto/glowna/onas1.jpg" alt="Photographer in action at the stadium">
+    </div>
+    <div class="story-content">
+      <h2>Our mission is perfection.</h2>
+      <p>IPSPRESS was born out of a true passion for sports and an obsession with the perfect image. We know that the shots making the front covers of major magazines are often determined by millimeters and split seconds.</p>
+      <p>Our equipment is just a tool. Our greatest asset is the instinct of our photographers. We take pride in collaborating with major brands, delivering premium visual content in record time, straight from the pitch, court, or race track.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Have a project that requires the ultimate coverage?</h2>
+  <a href="mailto:news@ipspress.com" class="btn-red">Let's build a partnership</a>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>IPSPRESS</h2>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Our Agency</h4>
+      <a href="about-us">About Us</a>
+      <a href="careers">Careers</a>
+      <a href="press-contact">Press Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="editorial-photos">Editorial Photos</a>
+      <a href="club-packages">Club Packages</a>
+      <a href="sports-video">Sports Video</a>
+      <a href="sell-your-photos">Sell Your Photos</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="licensing">Licensing</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>All photographs are the property of the author. Copying without permission is prohibited. © 2026 IPS PRESS</p>
+  </div>
+</footer>
+
+<script>
+  // Blokada zapisu zdjęć
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+  });
+</script>
+
+</body>
+</html>
